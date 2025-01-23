@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'Consolas';
+  font-display: swap;
+  src: local('Consolas'), url(../fonts/consolas.ttf) format('truetype');
+}
+
+h1,
+h2 {
+  color: var(--brand-color);
+}
+
+pre:has(> code) {
+  position: relative;
+}
+
+code {
+  &.language-jsdoc {
+    color: rgb(114, 255, 114);
+
+    .token.parameter {
+      color: rgb(151, 255, 255);
+    }
+  }
+  &.language-error {
+    color: salmon;
+  }
+}
+
+.token {
+  &.operator {
+    background: none;
+  }
+  &.class-name {
+    > .punctuation + .operator {
+      color: rgb(114, 255, 114);
+    }
+  }
+  &.constant {
+    color: #ff71a4;
+  }
+}
+
+.outline {
+  -webkit-text-fill-color: #000;
+  -webkit-text-stroke-color: currentColor;
+  -webkit-text-stroke-width: 0.02em;
+  text-shadow: 0 0 0.2em;
+}
+
+@keyframes clip-left {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes clip-right {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+p-deck:not([mode='speaker']) {
+  @each $dir in left right {
+    p-fragment[aria-hidden='false'] .clip-#{$dir},
+    p-slide[aria-hidden='false'] .clip-#{$dir}:not(p-fragment > .clip-#{$dir}) {
+      animation: clip-#{$dir} var(--fragment-duration, 300ms) $motion-entrance-timing-fn 1 forwards;
+    }
+  }
+}
+
+.code-popover {
+  position: absolute;
+  border: 0.1em solid gray;
+  border-radius: 0.2em;
+  background: inherit;
+  transform: translate(calc(2em / 3), calc(0.5em - 100%));
+  white-space-collapse: collapse;
+  z-index: 1;
+
+  &#{&} > * {
+    padding: 0.25em 0.5em;
+    opacity: 1;
+  }
+
+  > div {
+    font-family: var(--base-font-family);
+  }
+  em {
+    color: inherit;
+  }
+
+  > code[class*='language-'] {
+    display: block;
+    border-radius: 0;
+    line-height: normal;
+  }
+
+  > code:not(:last-child),
+  [data-ts-error] {
+    border-bottom: 0.1em solid #606060;
+  }
+
+  [data-ts-error]::after {
+    content: '(' attr(data-ts-error) ')';
+    color: gray;
+  }
+
+  pre > p-fragment[aria-hidden='true']:is(&) {
+    opacity: 0;
+  }
+  pre[class*='language-']:has(&) {
+    overflow: visible;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.5lh);
+    left: var(--popover-cursor-shift, 0ch);
+    width: 2ch;
+    height: 3.1ch;
+    background: url(../img/cursor.svg);
+  }
+}
+
+.squiggle {
+  position: absolute;
+  color: transparent;
+  margin-top: 0.5em;
+  margin-left: calc(2em / 3);
+  text-shadow: none;
+  text-decoration: underline wavy red;
+  text-underline-offset: 0.25em;
+}
+
+.the-arrow {
+  background: url(../img/arrow.svg);
+  aspect-ratio: 140/242;
+  position: absolute;
+  width: 2em;
+  z-index: 1;
+}
+
+.the-stroke {
+  position: absolute;
+  height: 1lh;
+  width: 6em;
+  border-image: url(../img/strike.svg) 0 fill;
+  z-index: 1;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--fragment-duration);
+
+  p-fragment[aria-hidden='false']:is(&),
+  p-fragment[aria-hidden='false'] > & {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.the-circle {
+  position: absolute;
+  height: 2lh;
+  width: 2lh;
+  border-image: url(../img/marker-circle.svg) 0 fill;
+  z-index: 1;
+  clip-path: polygon(50% 50%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%);
+
+  p-fragment[aria-hidden='false']:is(&),
+  p-fragment[aria-hidden='false'] > & {
+    animation: mark-circle var(--fragment-duration, 300ms) 1 linear forwards;
+  }
+}
+
+@keyframes mark-circle {
+  0% {
+    clip-path: polygon(50% 50%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%);
+  }
+  10% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 25% 0, 25% 0, 25% 0, 25% 0, 25% 0, 25% 0, 25% 0);
+  }
+  23% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 75% 0, 75% 0, 75% 0, 75% 0, 75% 0, 75% 0);
+  }
+  36% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 25%, 100% 25%, 100% 25%, 100% 25%, 100% 25%);
+  }
+  49% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 75%, 100% 75%, 100% 75%, 100% 75%, 100% 75%);
+  }
+  62% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 75% 100%, 75% 100%, 75% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 25% 100%, 25% 100%);
+  }
+  88% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 75%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 10% 15%, 25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%);
+  }
+}
+
+.pointing-start,
+.pointing-end {
+  position: absolute;
+  width: 5em;
+  z-index: 1;
+  top: 51%;
+  filter: sepia(1);
+  transition: translate var(--fragment-duration);
+
+  p-fragment[aria-hidden='false'] & {
+    translate: 0 0;
+  }
+}
+.pointing-start {
+  left: 24%;
+  rotate: 45deg;
+  translate: -100vmin -100vmin;
+}
+.pointing-end {
+  left: 79%;
+  rotate: 135deg;
+  scale: 1 -1;
+  translate: 100vmin -100vmin;
+}
