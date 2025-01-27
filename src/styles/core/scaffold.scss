@@ -14,30 +14,6 @@ pre p-fragment {
   &[aria-hidden='false'] {
     opacity: 1;
   }
-  &.collapsed {
-    interpolate-size: allow-keywords;
-    display: inline-block;
-    transition: opacity var(--fragment-duration, 300ms), width var(--fragment-duration, 300ms);
-    width: 0;
-    overflow: clip;
-
-    &[aria-hidden='false'] {
-      width: auto;
-    }
-  }
-
-  &.vertical-collapsed {
-    interpolate-size: allow-keywords;
-    display: block;
-    transition: opacity var(--fragment-duration, 300ms), height var(--fragment-duration, 300ms);
-    height: 0;
-    overflow: clip;
-    white-space: inherit;
-
-    &[aria-hidden='false'] {
-      height: auto;
-    }
-  }
 
   code[class*='language-'] {
     white-space: pre;
@@ -74,6 +50,10 @@ pre[class*='language-'] {
 pre.big[class*='language-'] {
   font-size: 75%;
   padding: 0.5em 0.6667em;
+}
+pre.huge[class*='language-'] {
+  font-size: 100%;
+  padding: 0.375em 0.5em;
 }
 
 h1,

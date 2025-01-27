@@ -40,11 +40,10 @@
 }
 
 :root {
-  --slide-bg: #272822;
+  --slide-bg: #fff;
   --sliding-duration: 0ms;
   --fragment-duration: 300ms;
-  --brand-color: hsl(304, 51%, 56%);
-  --brand-color-gfy: #822a7c;
+  --brand-color: #822a7c;
   --brand-color-ant: #f60;
   --sketchy-arrow-width: 0.1em;
   --sketchy-arrow-tip-size: 20;
@@ -53,7 +52,7 @@
 }
 
 p-deck {
-  color: white;
+  color: #272822;
 }
 
 p-deck::after {
@@ -67,17 +66,6 @@ p-deck::after {
   color: white;
   mix-blend-mode: difference;
   z-index: 100;
-}
-
-p-fragment.landing {
-  position: absolute;
-  transform: scale(3);
-  transition: opacity var(--fragment-duration, 300ms), transform var(--fragment-duration, 300ms);
-
-  &[aria-hidden='false'],
-  p-deck[mode='speaker'] & {
-    transform: scale(1);
-  }
 }
 
 .our-header {

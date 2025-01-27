@@ -163,8 +163,8 @@ p-deck:not([mode='speaker']) {
 
 .the-circle {
   position: absolute;
-  height: 2lh;
   width: 2lh;
+  aspect-ratio: 1;
   border-image: url(../img/marker-circle.svg) 0 fill;
   z-index: 1;
   clip-path: polygon(50% 50%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%, 10% 15%);

@@ -191,6 +191,34 @@ p-deck:not([mode='speaker']) {
     }
   }
 }
+
+p-fragment {
+  &.collapsed {
+    interpolate-size: allow-keywords;
+    display: inline-block;
+    transition: opacity var(--fragment-duration, 300ms), width var(--fragment-duration, 300ms);
+    width: 0;
+    overflow: clip;
+
+    &[aria-hidden='false'] {
+      width: auto;
+    }
+  }
+
+  &.vertical-collapsed {
+    interpolate-size: allow-keywords;
+    display: block;
+    transition: opacity var(--fragment-duration, 300ms), height var(--fragment-duration, 300ms);
+    height: 0;
+    overflow: clip;
+    white-space: inherit;
+
+    &[aria-hidden='false'] {
+      height: auto;
+    }
+  }
+}
+
 .from-above,
 .from-below {
   position: absolute;
@@ -256,14 +284,22 @@ $fade-border-image-y: linear-gradient(
   all: revert-layer;
 }
 
-code:is(.output, .input)::before {
-  display: inline-block;
-  width: 2ch;
-  color: white;
-}
-code.input::before {
-  content: '\2b9e';
-}
-code.output::before {
-  content: '\2b9c';
+code {
+  &:is(.output, .input)::before {
+    display: inline-block;
+    width: 2ch;
+    color: white;
+  }
+  &.input::before {
+    content: '\2b9e';
+    content: '\25b6';
+  }
+  &.output::before {
+    content: '\2b9c';
+    content: '\25c0';
+  }
+  &.clip {
+    display: inline-block;
+    overflow: clip;
+  }
 }
