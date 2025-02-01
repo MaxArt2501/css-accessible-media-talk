@@ -254,3 +254,35 @@ p-deck:not([mode='speaker']) {
     text-align: justify;
   }
 }
+
+.chart {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  font-size: 60%;
+  text-align: center;
+  align-items: start;
+  justify-items: center;
+  gap: 0.5em;
+
+  > span {
+    display: contents;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: calc(var(--price) * 0.003em + 0.1em);
+      background: linear-gradient(to right, transparent calc(50% - 1em), var(--brand-color) 0 calc(50% + 1em), transparent 0);
+      align-self: end;
+      border-bottom: 0.1em solid;
+      clip-path: inset(100% 0 0 0);
+
+      [active] & {
+        transition: clip-path calc(var(--fragment-duration, 300ms) * var(--price) / 500);
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  }
+}

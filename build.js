@@ -83,8 +83,7 @@ export const copyVendors = () => {
       'node_modules/prismjs/components/prism-javadoclike.js',
       'node_modules/prismjs/components/prism-jsdoc.js',
       'node_modules/prismjs/components/prism-typescript.js',
-      'node_modules/prismjs/themes/prism.css',
-      'node_modules/prismjs/themes/prism-okaidia.css'
+      'node_modules/prismjs/themes/prism.css'
     ],
     { nodir: true }
   )) {
