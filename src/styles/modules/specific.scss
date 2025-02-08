@@ -3,6 +3,11 @@
   font-display: swap;
   src: local('Consolas'), url(../fonts/consolas.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'VT323';
+  font-display: swap;
+  src: local('VT323'), url(../fonts/vt323.ttf) format('truetype');
+}
 
 h1,
 h2 {
@@ -223,11 +228,11 @@ p-deck:not([mode='speaker']) {
   }
 }
 
-.paper {
+.paper,
+.email {
   position: absolute;
   inset: 0;
   background: white;
-  padding: 2.5em 1em 0;
   padding-bottom: inherit;
   margin: auto auto 0;
   width: 21em;
@@ -237,11 +242,15 @@ p-deck:not([mode='speaker']) {
   transform: translateY(100%);
   transition: transform var(--fragment-duration, 300ms);
   font-size: 50%;
-  font-family: ui-serif, 'Times New Roman', Times, serif;
 
   [aria-hidden='false'] & {
     transform: translateY(0);
   }
+}
+
+.paper {
+  padding: 2.5em 1em 0;
+  font-family: ui-serif, 'Times New Roman', Times, serif;
 
   h1,
   h2 {
@@ -252,6 +261,80 @@ p-deck:not([mode='speaker']) {
     text-indent: 1em;
     font-size: 80%;
     text-align: justify;
+  }
+}
+
+.email {
+  hgroup {
+    h4,
+    p {
+      border-bottom: 1px solid gray;
+      margin-bottom: 0;
+    }
+    h4::before {
+      content: 'Subject: ';
+    }
+
+    > p::before {
+      content: 'To: ';
+      font-weight: bold;
+    }
+    em {
+      font-style: normal;
+    }
+  }
+  h4,
+  p {
+    padding: 0.25em 0.5em;
+  }
+
+  &.terminal {
+    hgroup {
+      h4,
+      p {
+        border-bottom: 0.1em dashed currentColor;
+      }
+      em {
+        text-decoration: underline;
+        color: inherit;
+        white-space: nowrap;
+
+        &::before {
+          content: '<';
+        }
+        &::after {
+          content: '>';
+        }
+      }
+    }
+    h4,
+    p {
+      padding: calc(0.5lh - 0.05em) 1ch;
+    }
+  }
+  &:not(.terminal) {
+    em {
+      display: inline-block;
+      background-color: color-mix(in srgb, white 90%, var(--brand-color));
+      padding-inline: 0.5em;
+      border-radius: 100vmax;
+    }
+  }
+}
+
+.terminal {
+  &#{&} {
+    font-family: VT323, ui-monospace, monospace;
+    background: repeating-linear-gradient(to bottom, #001100 0 0.08em, #001800 0.12em 0.2em);
+    color: lime;
+    font-weight: normal;
+
+    *,
+    ::before,
+    ::after {
+      font-weight: inherit;
+      filter: drop-shadow(0 0 0.5em color-mix(in srgb, transparent, currentColor 25%));
+    }
   }
 }
 

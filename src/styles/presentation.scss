@@ -195,24 +195,30 @@ gfy-blob {
   box-shadow: 0 0 0.5em rgba(black, 0.5);
 }
 
-.JavaScript {
-  background-color: #f7df1e;
-  color: #323330;
-  padding: 0 0.25em;
-  font-weight: 600;
-  &:empty::before {
-    content: 'JavaScript';
+$lang-colors: (
+  JavaScript: #f7df1e,
+  TypeScript: #3178c6,
+  CSS: rebeccapurple,
+  HTML: #dc6e3d
+);
+
+@each $lang, $color in $lang-colors {
+  .#{$lang} {
+    background-color: $color;
+    color: white;
+    padding: 0 0.25em;
+    font-weight: 600;
+    &:empty::before {
+      content: '#{$lang}';
+    }
   }
 }
 
-.TypeScript {
-  background-color: #3178c6;
-  color: white;
-  padding: 0 0.25em;
-  font-weight: 600;
-  &:empty::before {
-    content: 'TypeScript';
-  }
+.JavaScript {
+  color: #323330;
+}
+.CSS {
+  border-radius: 0 0.1em 0.1em 0.1em;
 }
 
 .big-x {
