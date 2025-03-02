@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <p-deck> slide:cover slide:media slide:print slide:email slide:links slide:the-end </p-deck>
+    <p-deck> slide:cover slide:media slide:print slide:email slide:ebook slide:links slide:the-end </p-deck>
     <div role="progressbar" class="presentation-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" title="Presentation progress"></div>
     <div role="toolbar" class="presentation-toolbar">
       <button type="button" class="toggle-mode" title="Toggle speaker mode" aria-label="Toggle speaker mode (Alt-M)">
@@ -34,6 +34,14 @@
       <button type="button" class="previous" title="Go backward" aria-label="Go backward"></button>
       <button type="button" class="next" title="Go forward" aria-label="Go forward"></button>
     </nav>
+    <script type="importmap">
+      {
+        "imports": {
+          "roughjs": "./vendor/roughjs/bundled/rough.esm.js",
+          "roughjs/bin/": "./vendor/roughjs/bin/"
+        }
+      }
+    </script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/presentation.js"></script>
     <script defer type="module" src="js/blob.js"></script>

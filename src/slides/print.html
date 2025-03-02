@@ -40,16 +40,14 @@
 </p-slide>
 <p-slide class="center">
   <h3>Loss of interactivity</h3>
-  <p-fragment>
-    <h1 class="center">⌨️ &nbsp;&nbsp;&nbsp;🖱️</h1>
-  </p-fragment>
-  <p-fragment>
-    <div class="big-x" style="width: 4em; top: 51%; left: 33%"></div>
-    <div class="big-x" style="width: 4em; top: 51%; left: 52%"></div>
+  <p-fragment style="font-size: 2em">
+    <p-fragment data-annotation="crossed-off;color:red"><img src="img/keyboard.svg" class="icon" alt="Keyboard" /></p-fragment>
+    &nbsp;&nbsp;&nbsp;
+    <p-fragment data-annotation="crossed-off;color:red"><img src="img/mouse.svg" class="icon" alt="Mouse" /></p-fragment>
   </p-fragment>
 </p-slide>
 <p-slide>
-  <div class="balls">
+  <p-fragment data-annotation="crossed-off;color:red" class="balls">
     <code>&lt;button></code>
     <code>&lt;input></code>
     <code>&lt;select></code>
@@ -57,8 +55,7 @@
     <code>&lt;dialog></code>
     <code>&lt;audio></code>
     <code>&lt;video></code>
-  </div>
-  <p-fragment class="big-x" style="width: 12em; left: calc(50% - 6em)"></p-fragment>
+  </p-fragment>
 </p-slide>
 <p-slide>
   <pre class="huge self-center"><code class="language-html">&hellip; as explained on
@@ -81,17 +78,18 @@
 <p-slide>
   <ul class="self-center">
     <li>
-      <p-fragment>👉 Leave it as is</p-fragment>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Leave it as is</p-fragment>
     </li>
     <li>
-      <p-fragment>👇 Truncate it and&hellip;</p-fragment>
+      <p-fragment><img src="img/pointing-right.svg" class="icon rotate-45" alt="" /> Truncate it and&hellip;</p-fragment>
       <ul>
         <li>
-          <p-fragment>&emsp;👉 &hellip; add a QR code</p-fragment>
+          <p-fragment>&emsp;<img src="img/pointing-right.svg" class="icon" alt="" /> &hellip; add a QR code</p-fragment>
         </li>
         <li>
-          <p-fragment>&emsp;👉 &hellip; add a footnote</p-fragment>
-          <p-fragment class="the-stroke" style="width: 8.5em; left: 38%; top: 61%"></p-fragment>
+          <p-fragment
+            >&emsp;<img src="img/pointing-right.svg" class="icon" alt="" /> <p-fragment data-annotation="strike-through;color:red">&hellip; add a footnote</p-fragment></p-fragment
+          >
         </li>
       </ul>
     </li>
@@ -124,8 +122,8 @@
   <pre class="big self-center" style="line-height: normal"><code class="language-css">@media print {
   * {
     height: auto;</code><p-fragment
-    class="vertical-collapsed"><code class="language-css">    word-break: break-word;</code></p-fragment><p-fragment
-    class="the-stroke" style="width: 23ch; top: calc(.5em + 4lh); left: calc(.667em + 4ch)"></p-fragment><p-fragment
+    class="vertical-collapsed">    <p-fragment
+    data-annotation="strike-through;color:red"><code class="language-css">word-break: break-word;</code></p-fragment></p-fragment><p-fragment
     class="vertical-collapsed"><code class="language-css">    word-break: normal;
     overflow-wrap: anywhere;</code></p-fragment><p-fragment
     class="vertical-collapsed"><code class="language-css">    hyphens: auto;</code></p-fragment><code class="language-css">  }

@@ -83,7 +83,10 @@ export const copyVendors = () => {
       'node_modules/prismjs/components/prism-javadoclike.js',
       'node_modules/prismjs/components/prism-jsdoc.js',
       'node_modules/prismjs/components/prism-typescript.js',
-      'node_modules/prismjs/themes/prism.css'
+      'node_modules/prismjs/themes/prism.css',
+      'node_modules/roughjs/bundled/rough.esm.js',
+      'node_modules/roughjs/bin/**/*.js',
+      'node_modules/rough-notation/lib/rough-notation.esm.js'
     ],
     { nodir: true }
   )) {

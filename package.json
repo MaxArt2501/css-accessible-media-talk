@@ -20,7 +20,9 @@
   "license": "MIT",
   "dependencies": {
     "p-slides": "^0.1.0",
-    "prismjs": "^1.16.0"
+    "prismjs": "^1.16.0",
+    "rough-notation": "^0.5.1",
+    "roughjs": "^4.6.6"
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",

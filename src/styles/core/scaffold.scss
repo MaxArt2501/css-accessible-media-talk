@@ -69,3 +69,11 @@ h6 {
     margin-bottom: 0;
   }
 }
+
+td,
+th {
+  padding: 0.125em 0.25em;
+}
+tbody th {
+  text-align: end;
+}
