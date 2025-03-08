@@ -129,3 +129,211 @@
     class="vertical-collapsed"><code class="language-css">    hyphens: auto;</code></p-fragment><code class="language-css">  }
 }</code></pre>
 </p-slide>
+<p-slide class="center">
+  <h1>No videos<br />No transitions<br />No animations</h1>
+  <p-notes>A printed page is basically a snapshot, so&hellip;</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>
+    No client-side work<br /><p-fragment><small>after the initial rendering</small></p-fragment>
+  </h1>
+  <p-notes>That should be obvious. But what if a user wants to print a random page? One that <em>does</em> involve runtime actions?</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>Decent font size</h1>
+  <p-notes>
+    Remember users <em>cannot</em> adjust the font size after a page has been printed. Old typewriter standards converged to adopt 12 points of font-size, which can be translated
+    to the standard 16 pixels of web size thanks to the fixed pixel-per-inch ratio. But nothing prevents us to do even better&hellip;
+  </p-notes>
+</p-slide>
+<p-slide class="stack">
+  <svg viewBox="0 0 480 270" style="height: 100%" id="classicSite">
+    <circle cx="130" cy="10" r="10" fill="#aaa"></circle>
+    <rect x="145" y="5" width="45" height="10" fill="#aaa"></rect>
+    <line x1="200" x2="280" y1="15" y2="15" stroke="#888"></line>
+    <circle cx="276.5" cy="8" r="2" fill="none" stroke="#888"></circle>
+    <line x1="278" x2="280" y1="9.5" y2="11.5" stroke="#888"></line>
+    <rect x="315" y="7" width="6" height="6" fill="#aaa" rx="2"></rect>
+    <rect x="323" y="7" width="25" height="6" fill="#aaa"></rect>
+    <circle cx="355" cy="10" r="5" fill="#aaa"></circle>
+    <line x1="120" x2="360" y1="25" y2="25" stroke="#444"></line>
+    <rect x="120" y="30" width="15" height="4" fill="#888"></rect>
+    <line x1="120" x2="135" y1="36" y2="36" stroke="#444"></line>
+    <g fill="#aaa">
+      <rect x="120" y="40" width="20" height="3"></rect>
+      <rect x="120" y="46" width="30" height="3"></rect>
+      <rect x="120" y="52" width="28" height="3"></rect>
+      <rect x="120" y="58" width="33" height="3"></rect>
+      <rect x="120" y="64" width="24" height="3"></rect>
+      <rect x="130" y="70" width="20" height="3"></rect>
+      <rect x="130" y="76" width="30" height="3"></rect>
+      <rect x="130" y="82" width="28" height="3"></rect>
+      <rect x="120" y="88" width="33" height="3"></rect>
+      <rect x="120" y="94" width="24" height="3"></rect>
+    </g>
+    <rect x="180" y="30" width="45" height="6" fill="#888"></rect>
+    <rect x="180" y="38" width="65" height="4" fill="#aaa"></rect>
+    <rect x="198" y="60" width="20" height="20" fill="red"></rect>
+    <rect x="220" y="50" width="20" height="30" fill="#00f"></rect>
+    <rect x="242" y="70" width="20" height="10" fill="#0a0"></rect>
+    <rect x="264" y="65" width="20" height="15" fill="#f60"></rect>
+    <rect x="190" y="48" width="6" height="2" fill="#888"></rect>
+    <rect x="190" y="58" width="6" height="2" fill="#888"></rect>
+    <rect x="192" y="68" width="4" height="2" fill="#888"></rect>
+    <rect x="193" y="78" width="3" height="2" fill="#888"></rect>
+    <rect x="188" y="87" width="90" height="3" fill="#aaa"></rect>
+    <rect x="180" y="92" width="94" height="3" fill="#aaa"></rect>
+    <rect x="180" y="97" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="102" width="96" height="3" fill="#aaa"></rect>
+    <rect x="180.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="183.5" y="113" width="26" height="20" rx="2" fill="#888"></rect>
+    <rect x="183.5" y="135" width="20" height="2" fill="#888"></rect>
+    <rect x="183.5" y="138" width="25" height="2" fill="#aaa"></rect>
+    <rect x="183.5" y="141" width="13" height="2" fill="#aaa"></rect>
+    <rect x="200.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="216.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="219.5" y="113" width="26" height="20" rx="2" fill="#f60"></rect>
+    <rect x="219.5" y="135" width="14" height="2" fill="#888"></rect>
+    <rect x="219.5" y="138" width="24" height="2" fill="#aaa"></rect>
+    <rect x="219.5" y="141" width="7" height="2" fill="#aaa"></rect>
+    <rect x="236.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="252.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="255.5" y="113" width="26" height="20" rx="2" fill="#0a0"></rect>
+    <rect x="255.5" y="135" width="21" height="2" fill="#888"></rect>
+    <rect x="255.5" y="138" width="23" height="2" fill="#aaa"></rect>
+    <rect x="255.5" y="141" width="11" height="2" fill="#aaa"></rect>
+    <rect x="272.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="188" y="155" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="160" width="96" height="3" fill="#aaa"></rect>
+    <rect x="180" y="165" width="97" height="3" fill="#aaa"></rect>
+    <rect x="180" y="170" width="77" height="3" fill="#aaa"></rect>
+    <rect x="180" y="180" width="64" height="6" fill="#aaa"></rect>
+    <rect x="188" y="193" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="198" width="99" height="3" fill="#aaa"></rect>
+    <rect x="180" y="203" width="34" height="3" fill="#aaa"></rect>
+    <rect x="288.5" y="30.5" width="71" height="44" fill="none" stroke="#888" rx="2" />
+    <rect x="292" y="35" width="50" height="4" fill="#888" />
+    <rect x="292" y="42" width="24" height="3" fill="#aaa" />
+    <rect x="330" y="42" width="8" height="3" fill="#888" />
+    <rect x="292" y="47" width="32" height="3" fill="#aaa" />
+    <rect x="330" y="47" width="12" height="3" fill="#888" />
+    <rect x="292" y="52" width="15" height="3" fill="#aaa" />
+    <rect x="330" y="52" width="24" height="3" fill="#888" />
+    <rect x="292" y="57" width="30" height="3" fill="#aaa" />
+    <rect x="330" y="57" width="10" height="3" fill="#888" />
+    <rect x="292" y="62" width="28" height="3" fill="#aaa" />
+    <rect x="330" y="62" width="12" height="3" fill="#888" />
+    <rect x="292" y="67" width="14" height="3" fill="#aaa" />
+    <rect x="330" y="67" width="18" height="3" fill="#888" />
+    <line x1="120" x2="360" y1="240" y2="240" stroke="#444"></line>
+    <circle cx="127" cy="251" r="7" fill="#aaa"></circle>
+    <rect x="137" y="248" width="30" height="6" fill="#aaa"></rect>
+    <g fill="#aaa">
+      <rect x="180" y="246" width="30" height="2"></rect>
+      <rect x="180" y="252" width="28" height="2"></rect>
+      <rect x="180" y="258" width="33" height="2"></rect>
+      <rect x="180" y="264" width="24" height="2"></rect>
+      <rect x="240" y="246" width="20" height="2"></rect>
+      <rect x="240" y="252" width="30" height="2"></rect>
+      <rect x="240" y="258" width="28" height="2"></rect>
+      <rect x="240" y="264" width="33" height="2"></rect>
+      <rect x="300" y="246" width="33" height="2"></rect>
+      <rect x="300" y="252" width="24" height="2"></rect>
+      <rect x="300" y="258" width="20" height="2"></rect>
+      <rect x="300" y="264" width="30" height="2"></rect>
+    </g>
+  </svg>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block" id="classicAds">
+      <image x="288" y="77" href="img/car-adv.webp" height="48" width="72" />
+      <image x="288" y="207" href="img/burger-adv.webp" height="28" width="72" />
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect x="120" y="200.5" width="240" height="70" fill="#fff" stroke="#444"></rect>
+      <text x="130" y="225" font-size="16" fill="#444">🍪 We value your privacy</text>
+      <rect x="157" y="235" width="168" height="4" fill="#aaa"></rect>
+      <rect x="157" y="241" width="162" height="4" fill="#aaa"></rect>
+      <rect x="157" y="247" width="64" height="4" fill="#aaa"></rect>
+      <rect x="269" y="254" width="40" height="10" stroke="#55f" stroke-width="2" fill="#fff" rx="2"></rect>
+      <rect x="312" y="253" width="40" height="12" fill="#55f" rx="2"></rect>
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect width="480" height="270" fill="#0005"></rect>
+      <rect x="150" y="75" width="180" height="120" fill="#fff" stroke="#444"></rect>
+      <text x="240" y="90" font-size="10" fill="#444" text-anchor="middle">Subscribe to our newsletter</text>
+      <rect x="160" y="101" width="157" height="4" fill="#aaa"></rect>
+      <rect x="160" y="107" width="64" height="4" fill="#aaa"></rect>
+      <rect x="160" y="118" width="160" height="20" fill="#fff" stroke="#888" rx="2"></rect>
+      <rect x="160" y="145" width="152" height="4" fill="#aaa"></rect>
+      <rect x="160" y="151" width="92" height="4" fill="#aaa"></rect>
+      <rect x="235" y="168" width="40" height="16" stroke="#55f" stroke-width="2" fill="#fff" rx="2"></rect>
+      <rect x="280" y="167" width="40" height="18" fill="#55f" rx="2"></rect>
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect width="480" height="270" fill="#000"></rect>
+      <image x="90" y="29.8" href="img/juice-adv.webp" height="210.6" width="300" />
+      <line x1="476" x2="479" y1="1" y2="4" stroke="#fff"></line>
+      <line x1="479" x2="476" y1="1" y2="4" stroke="#fff"></line>
+    </svg>
+  </p-fragment>
+  <p-fragment
+    ><img
+      src="img/pointing-right.svg"
+      style="position: absolute; rotate: 45deg; inset: 8% 4% auto auto; width: 1em; scale: -1 1"
+      alt="Finger pointing to a miniscule cross to close the full-page ad"
+  /></p-fragment>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 480 270">
+    <use href="#classicSite" />
+    <use href="#classicAds" />
+  </svg>
+  <p-fragment data-annotation="box" style="position: absolute; width: 4.8em; height: 8em; top: 16%; left: 39%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 3em; height: 1.8em; top: 17%; left: 59%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 3.15em; height: 0.9em; top: 7%; left: 28.5%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 16% 64% 61% 28%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 8% 42% 87% 42%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 8.5% 28.5% 88% 63%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 31% 28.5% 53% 58.5%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 72.5% 28.5% 18% 58.5%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 84% 32% 8% 39%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 2.2em; height: 0.8em; top: 84%; left: 28.5%"></p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="self-center big"><code class="language-css">@media print {
+  @page {
+    size: A4;</code><p-fragment class="vertical-collapsed"><code class="language-css">
+    @bottom-right {
+      content: 'Pg. ' counter(page) '/' counter(pages);
+    }</code></p-fragment><code class="language-css">  }
+}</code><p-fragment data-annotation="circle;padding:0.25,0.5" style="position: absolute;top: calc(4lh + .667em);left: calc(4ch + .5em);width: 14ch;height:1lh"></p-fragment></pre>
+</p-slide>
+<p-slide>
+  <article class="paper with-spots">
+    <span data-spot="top-left-corner"></span>
+    <span data-spot="top-left"></span>
+    <span data-spot="top-center"></span>
+    <span data-spot="top-right"></span>
+    <span data-spot="top-right-corner"></span>
+    <span data-spot="bottom-left-corner"></span>
+    <span data-spot="bottom-left"></span>
+    <span data-spot="bottom-center"></span>
+    <span data-spot="bottom-right"></span>
+    <span data-spot="bottom-right-corner"></span>
+    <span data-spot="left-top"></span>
+    <span data-spot="left-middle"></span>
+    <span data-spot="left-bottom"></span>
+    <span data-spot="right-top"></span>
+    <span data-spot="right-middle"></span>
+    <span data-spot="right-bottom"></span>
+  </article>
+</p-slide>
+<p-slide>
+  <img src="img/chrome-sketch.svg" alt="Logo of Chrome" style="height: 100%" />
+</p-slide>

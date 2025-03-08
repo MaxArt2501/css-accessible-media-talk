@@ -14,7 +14,10 @@ const getAnnotation = element => {
       (options, option) => {
         const [key, value] = option.trim().split(/\s*:\s*/);
         if (key) {
-          if (value === 'true' || value === 'false') {
+          if (key === 'padding') {
+            const fontSize = parseFloat(window.getComputedStyle(element).fontSize);
+            options[key] = value.split(/\s*,\s*/).map(value => Number(value) * fontSize);
+          } else if (value === 'true' || value === 'false') {
             options[key] = value === 'true';
           } else if (Number.isFinite(Number(value))) {
             options[key] = Number(value);
@@ -39,10 +42,39 @@ const toggleAnnotation = element => {
   annotation[isVisible ? 'show' : 'hide']();
 };
 
+const ensureSketch = element => {
+  let svg = element.querySelector('svg');
+  if (svg) return svg;
+  svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  const factor = parseFloat(window.getComputedStyle(element).fontSize) / 10;
+  const rect = element.getBoundingClientRect();
+  const width = rect.width / factor;
+  const height = rect.height / factor;
+  const viewBox = `0 0 ${width} ${height}`;
+  svg.setAttribute('viewBox', viewBox);
+  svg.innerHTML = `<path d="${Array.from({ length: width + height }, (_, index) => {
+    const cmd = index ? 'L' : 'M';
+    let x, y;
+    if (index & 1) {
+      x = Math.min(index, width) + Math.random() - 0.5;
+      y = Math.max(0, index - width) + Math.random() - 0.5;
+    } else {
+      x = Math.max(0, index - height) + Math.random() - 0.5;
+      y = Math.min(height, index) + Math.random() - 0.5;
+    }
+    return `${cmd} ${x} ${y}`;
+  }).join('')}"/>`;
+  svg.style.setProperty('--sketch-line-length', svg.firstElementChild.getTotalLength());
+  element.appendChild(svg);
+  return svg;
+};
+
 const deck = document.querySelector('p-deck');
 deck.addEventListener('p-slides.fragmenttoggle', ({ detail: { fragment } }) => {
   if (fragment.hasAttribute('data-annotation')) {
     toggleAnnotation(fragment);
+  } else if (fragment.classList.contains('sketch-rect')) {
+    console.log(ensureSketch(fragment));
   } else {
     fragment.querySelectorAll('[data-annotation]').forEach(toggleAnnotation);
   }

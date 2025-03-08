@@ -230,6 +230,63 @@
 <p-slide>
   <code
     >Mozilla/5.0 (Linux; U; Android 2.0; en-us;) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
-    <p-fragment data-annotation="circle;color:var(--brand-color)">(Kobo Touch)</p-fragment></code
+    <p-fragment data-annotation="circle;color:var(--brand-color);padding:0.25,0.5">(Kobo Touch)</p-fragment></code
   >
+  <code style="margin-top: 1em"
+    >Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+
+    <p-fragment data-annotation="circle;color:var(--brand-color);padding:0.25,0.5">Kindle/3.0+ </p-fragment></code
+  >
+</p-slide>
+<p-slide>
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)</code><p-fragment index="1" class="vertical-collapsed"><code class="language-css">          contrast(0.8);</code></p-fragment>}</pre>
+    <p-fragment style="width: auto">
+      <img
+        src="img/devtools-achromatopsia.png"
+        alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+        style="width: 8em; display: block"
+      />
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide style="filter: saturate(0)">
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)
+          contrast(0.8);
+}</code></pre>
+    <img
+      src="img/devtools-achromatopsia.png"
+      alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+      style="width: 8em"
+    />
+  </div>
+</p-slide>
+<p-slide style="filter: saturate(0) contrast(0.8)">
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)
+          contrast(0.8);
+}</code></pre>
+    <img
+      src="img/devtools-achromatopsia.png"
+      alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+      style="width: 8em"
+    />
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h1>No videos<br />No transitions<br />No animations</h1>
+  <p-notes>Even though <em>some</em> e-ink screens seems to handle that much better lately, the majority of them still support a very slow refresh rate</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>No client-side work</h1>
+  <p-notes>
+    There <em>are</em> smartphones with an e-ink display that should allegedly have a faster processor, but many ebook readers definitely don't. So making them to the job of a
+    modern React application means making the site unaccessible as the page just hangs and won't show the content.
+  </p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>Decent font size</h1>
 </p-slide>
