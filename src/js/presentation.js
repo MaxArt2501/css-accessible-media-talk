@@ -75,7 +75,33 @@ deck.addEventListener('p-slides.fragmenttoggle', ({ detail: { fragment } }) => {
     toggleAnnotation(fragment);
   } else if (fragment.classList.contains('sketch-rect')) {
     console.log(ensureSketch(fragment));
-  } else {
-    fragment.querySelectorAll('[data-annotation]').forEach(toggleAnnotation);
+  }
+});
+const doom = deck.querySelector('#software');
+const pseudoInput = deck.querySelector('[name="answer"]');
+pseudoInput.addEventListener('keydown', ({ code, target: { textContent } }) => {
+  if (code === 'Enter') {
+    pseudoInput.blur();
+    if ('yes'.indexOf(textContent.trim().toLowerCase()) === 0) {
+      doom.src = doom.dataset.src;
+    }
+  }
+});
+deck.addEventListener('p-slides.slidechange', ({ detail: { slide, previous } }) => {
+  if (slide.isPrevious) {
+    slide.querySelectorAll('[data-annotation]').forEach(element => {
+      const annotation = getAnnotation(element);
+      const { animationDuration } = annotation;
+      annotation.animationDuration = 0.001;
+      annotation.show();
+      annotation.animationDuration = animationDuration;
+    });
+    slide.querySelectorAll('.sketch-rect').forEach(ensureSketch);
+  }
+  if (slide.id === 'doom') {
+    pseudoInput.textContent = '';
+    pseudoInput.focus();
+  } else if (previous.id === 'doom') {
+    doom.src = '';
   }
 });

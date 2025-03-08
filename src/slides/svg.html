@@ -1,0 +1,104 @@
+<p-slide>
+  <h1 class="center">
+    <img src="img/heart.svg" alt="Heart" style="height: 2em" /><br />
+    SVG
+  </h1>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 100 100" id="zoomOutCircle"><circle /></svg>
+  <p-fragment></p-fragment>
+</p-slide>
+<p-slide id="sliceText" class="stack">
+  <!-- https://codepen.io/thebabydino/pen/GRaKbZo -->
+  <svg width="0" height="0">
+    <filter id="sliced" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        values="0 0 0 0 .93
+                0 0 0 0 .93
+                0 0 0 0 .93
+                1 0 1 0 -1"
+      ></feColorMatrix>
+      <feOffset dx="-16" dy="-2" result="topstrip"></feOffset>
+      <feColorMatrix
+        in="SourceGraphic"
+        values="0 0 0 0 .93
+                0 0 0 0 .93
+                0 0 0 0 .93
+                0 1 1 0 -1"
+      ></feColorMatrix>
+      <feOffset dx="16" dy="2"></feOffset>
+      <feBlend in="topstrip"></feBlend>
+      <feDropShadow stdDeviation="5"></feDropShadow>
+      <feDropShadow stdDeviation="7" result="outstrip"></feDropShadow>
+      <feColorMatrix
+        in="SourceGraphic"
+        values=" 0  0 0 0 .945
+                 0  0 0 0 .965
+                 0  0 0 0 .4
+                -1 -1 1 0 0"
+      ></feColorMatrix>
+      <feBlend in="outstrip"></feBlend>
+    </filter>
+    <filter id="noisey">
+      <feTurbulence type="fractalNoise" baseFrequency="3.17"></feTurbulence>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .3"></feFuncA>
+      </feComponentTransfer>
+      <feComposite in="SourceGraphic" operator="out"></feComposite>
+    </filter>
+  </svg>
+  <div contenteditable="true">CSS Day</div>
+</p-slide>
+<p-slide id="doom">
+  <form>
+    <div>C:\games\doom> doom</div>
+    <div>This will load 8.69 MB of data.</div>
+    <label>Continue? (Y/n) <span role="textbox" name="answer" contenteditable="true"></span></label>
+  </form>
+  <iframe id="software" data-src="/doom.svg"></iframe>
+</p-slide>
+<p-slide>
+  <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+    <g>
+      <title>Simple SVG + mediaqueries</title>
+      <defs>
+        <style type="text/css">
+          #circle {
+            fill: #fce57e;
+            stroke: #fff;
+            stroke-width: 100px;
+            stroke-opacity: 0.5;
+            fill-opacity: 1;
+          }
+          @media screen and (max-width: 350px) {
+            #circle {
+              fill: #879758;
+            }
+          }
+          @media screen and (max-width: 200px) {
+            #circle {
+              fill: #3b9557;
+            }
+          }
+          @media screen and (max-width: 100px) {
+            #circle {
+              fill: #d8f935;
+            }
+          }
+          @media screen and (max-width: 50px) {
+            #circle {
+              fill: #a8c45f;
+            }
+          }
+          @media screen and (max-width: 25px) {
+            #circle {
+              fill: #2c3c0c;
+            }
+          }
+        </style>
+      </defs>
+      <circle cx="200" cy="200" r="150" id="circle" />
+    </g>
+  </svg> -->
+  <img src="/img/responsive.svg" style="width: 400px; height: 400px" />
+</p-slide>

@@ -486,3 +486,117 @@ p-fragment[data-annotation] {
     stroke-dasharray: var(--sketch-line-length) var(--sketch-line-length);
   }
 }
+
+#sliceText {
+  // https://codepen.io/thebabydino/pen/GRaKbZo
+  $p0: 58.5%;
+  $p1: 31%;
+  --slide-bg: #444;
+
+  svg {
+    position: fixed;
+    width: 0;
+    height: 0;
+  }
+
+  div {
+    position: relative;
+    place-self: center;
+    padding: 0 0.125em;
+    color: #00f; /* text on blue channel */
+    font-size: 5em;
+    font-style: italic;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+    text-align: center;
+    /* prevent blending pseudo with what's behind div */
+    isolation: isolate;
+    filter: url(#sliced) url(#noisey);
+    transition: filter 0.3s;
+
+    /* needed ONLY because of Firefox and Safari bugs
+	 * when it comes to background-clip: text
+	 * 🪲 Firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1481498
+	 * 🪲 Safari https://bugs.webkit.org/show_bug.cgi?id=267129 */
+    &::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-4deg, #0000 calc(#{$p0} + -0.5px), #f00 calc(#{$p0} + 0.5px)),
+        linear-gradient(-2.5deg, #0f0 calc(#{$p1} + -0.5px), #000 calc(#{$p1} + 0.5px));
+      background-size: 100% 1lh;
+      mix-blend-mode: lighten;
+      pointer-events: none;
+      content: '';
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// https://dev.to/janeori/css-type-casting-to-numeric-tanatan2-scalars-582j#screensize
+@property --font-size {
+  syntax: '<length>';
+  initial-value: 0px;
+  inherits: false;
+}
+
+#software {
+  --font-size: 1em;
+  scale: calc(18 / tan(atan2(642px, var(--font-size))));
+  width: 642px;
+  height: 402px;
+  border: none;
+  pointer-events: none;
+}
+
+#doom {
+  font-family: VT323, monospace;
+  color: lime;
+  --slide-bg: #222;
+
+  form:has(+ iframe[src='/doom.svg']) {
+    display: none;
+  }
+
+  span {
+    caret-color: transparent;
+    &:focus {
+      outline: none;
+      &::after {
+        content: '_';
+        animation: caret-blink 1s steps(2, jump-none) infinite;
+      }
+    }
+  }
+}
+
+@keyframes caret-blink {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: currentColor;
+  }
+}
+
+#zoomOutCircle {
+  width: 10em;
+  height: 10em;
+
+  circle {
+    cx: 50px;
+    cy: 50px;
+    r: 49px;
+    stroke-width: 2px;
+    transition: cy 9.5s, r 9.5s;
+    stroke: var(--brand-color);
+    fill: none;
+  }
+
+  &:has(+ [aria-hidden='false']) circle {
+    cy: 500px;
+    r: 499px;
+  }
+}
