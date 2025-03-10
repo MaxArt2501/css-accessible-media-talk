@@ -1,12 +1,14 @@
 <p-slide>
-  <h1 class="center">
-    <img src="img/heart.svg" alt="Heart" style="height: 2em" /><br />
+  <h1 class="center" id="zoomOutHeart">
+    <img src="img/heart.svg" alt="Heart" /><br />
     SVG
   </h1>
+  <p-fragment></p-fragment>
 </p-slide>
 <p-slide>
-  <svg viewBox="0 0 100 100" id="zoomOutCircle"><circle /></svg>
-  <p-fragment></p-fragment>
+  <div id="resizer">
+    <img src="img/responsive.svg" alt="A house that gets less detailes as it gets smaller" />
+  </div>
 </p-slide>
 <p-slide id="sliceText" class="stack">
   <!-- https://codepen.io/thebabydino/pen/GRaKbZo -->
@@ -58,47 +60,175 @@
   <iframe id="software" data-src="/doom.svg"></iframe>
 </p-slide>
 <p-slide>
-  <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
-    <g>
-      <title>Simple SVG + mediaqueries</title>
-      <defs>
-        <style type="text/css">
-          #circle {
-            fill: #fce57e;
-            stroke: #fff;
-            stroke-width: 100px;
-            stroke-opacity: 0.5;
-            fill-opacity: 1;
-          }
-          @media screen and (max-width: 350px) {
-            #circle {
-              fill: #879758;
-            }
-          }
-          @media screen and (max-width: 200px) {
-            #circle {
-              fill: #3b9557;
-            }
-          }
-          @media screen and (max-width: 100px) {
-            #circle {
-              fill: #d8f935;
-            }
-          }
-          @media screen and (max-width: 50px) {
-            #circle {
-              fill: #a8c45f;
-            }
-          }
-          @media screen and (max-width: 25px) {
-            #circle {
-              fill: #2c3c0c;
-            }
-          }
-        </style>
-      </defs>
-      <circle cx="200" cy="200" r="150" id="circle" />
-    </g>
-  </svg> -->
-  <img src="/img/responsive.svg" style="width: 400px; height: 400px" />
+  <img src="img/logo-generic.svg" alt="A generic logo" style="width: 10em" />
+  <p-fragment class="self-center">
+    <pre class="big"><code class="language-html">&lt;img src="img/logo.svg" alt="Generic company"></code></pre>
+  </p-fragment>
+  <p-fragment class="self-center">
+    <pre class="big"><code class="language-html clip" style="width: 25ch">&lt;svg viewBox="0 0 143 35"></code><p-fragment
+    class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 23ch">&lt;a role="graphics-document"></code><p-fragment
+    data-annotation="strike-through;color:red" style="display: inline-block; width: 17ch; height: 1em; margin-inline-start: -17ch; margin-bottom: -.2em;"></p-fragment><p-fragment
+    class="collapsed"><code class="language-html clip" style="text-indent: -6ch; width: 4ch">&lt;a r=" img"></code></p-fragment><code
+    class="language-html clip" style="text-indent: -6ch; width: 1ch">&lt;a a=""></code></p-fragment><p-fragment
+    class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 28ch">&lt;a aria-label="Generic company"></code></p-fragment><code
+    class="language-html clip" style="text-indent: -4ch">&lt;svg>...&lt;/svg></code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="big self-center"><code class="language-html">&lt;svg role="img"></code><p-fragment
+    class="vertical-collapsed"><code class="language-html">  &lt;title>Company chart&lt;/title></code></p-fragment><p-fragment
+    class="vertical-collapsed"><code class="language-html">  &lt;desc>At the top, the CEO...&lt;/desc></code></p-fragment><code
+    class="language-html">  ...
+&lt;/svg></code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns justify-center align-center">
+    <div style="width: 6em">
+      <svg viewBox="-10 -10 20 20" style="width: 100%">
+        <title id="title">Approval rating.</title>
+        <desc id="desc">In relation to the population.</desc>
+        <g stroke="#fff">
+          <path d="M0,0L-8.66,5A10,10 0 0 1 0,-10Z" fill="#0a0" />
+          <path d="M0,0L5,8.66A10,10 0 0 1 -8.66,5Z" fill="#fa0" />
+          <path d="M0,0V-10A10,10 0 0 1 5,8.66Z" fill="red" />
+        </g>
+        <g font-size="1" font-family="system-ui, sans-serif" text-anchor="middle" alignment-baseline="middle" fill="#fff">
+          <text aria-hidden="true" id="positive" x="-6.06" y="-3.5">33.3%</text>
+          <text aria-hidden="true" id="noOpinion" x="-1.81" y="6.76" fill="#000">25%</text>
+          <text aria-hidden="true" id="negative" x="6.76" y="-1.81">41.7%</text>
+        </g>
+      </svg>
+      <table style="font-size: 50%">
+        <tbody>
+          <tr>
+            <td>🟩 Favorable</td>
+          </tr>
+          <tr>
+            <td>🟨 No opinion</td>
+          </tr>
+          <tr>
+            <td>🟥 Unfavorable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="width: auto">
+      <p-fragment>
+        <pre class="no-margins"><code class="language-html clip" style="width: 16ch">&lt;svg viewBox="&hellip;"></code><p-fragment
+        class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 19ch">&lt;a aria-hidden="true"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch;">&lt;/svg></code>
+  <code class="language-html">&lt;title>Approval rating&lt;/title>
+  ...
+  &lt;text x="&hellip;" y="&hellip;">33.3%&lt;/text>
+  &lt;text x="&hellip;" y="&hellip;">25%&lt;/text>
+  &lt;text x="&hellip;" y="&hellip;">41.7%&lt;/text>
+&lt;/svg></code></pre>
+      </p-fragment>
+      <p-fragment>
+        <pre class="no-margins" style="padding-top: 0"><code class="language-html">&lt;table class="legend"></code>
+  <code class="language-html clip" style="width: 6ch">&lt;thead></code><p-fragment
+  class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 24ch">&lt;a class="visually-hidden"></code></p-fragment><code
+  class="language-html clip" style="text-indent: -6ch">&lt;thead>...&lt;/thead></code>
+  <code class="language-html">&lt;tbody>
+    &lt;tr>
+      &lt;th>Favorable&lt;/th></code>
+      <code class="language-html clip" style="width: 3ch">&lt;td></code><p-fragment
+      class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 24ch">&lt;a class="visually-hidden"></code></p-fragment><code
+      class="language-html clip" style="text-indent: -3ch">&lt;td>33.3%&lt;/td></code>
+    <code class="language-html">&lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></code></pre>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <pre class="big self-center"><code class="language-css">.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns free justify-center align-center">
+    <div>
+      <svg viewBox="-10 -10 20 30" style="width: 100%" role="group">
+        <title id="title">Approval rating.</title>
+        <desc id="desc">In relation to the population.</desc>
+        <g font-size="1" font-family="system-ui, sans-serif" fill="#222" dominant-baseline="middle" role="list">
+          <g role="listitem">
+            <g fill="#0a0">
+              <path d="M0,0L-8.66,5A10,10 0 0 1 0,-10Z" stroke="#fff" />
+              <rect x="-10" y="11" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="12" font-size="2">Favorable</tspan>
+              <tspan text-anchor="middle" x="-6.06" y="-3.5" fill="#fff">33.3%</tspan>
+            </text>
+          </g>
+          <g role="listitem">
+            <g fill="#fa0">
+              <path d="M0,0L5,8.66A10,10 0 0 1 -8.66,5Z" stroke="#fff" />
+              <rect x="-10" y="14" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="15" font-size="2">No opinion</tspan>
+              <tspan text-anchor="middle" x="-1.81" y="6.76">25%</tspan>
+            </text>
+          </g>
+          <g role="listitem">
+            <g fill="red">
+              <path d="M0,0V-10A10,10 0 0 1 5,8.66Z" stroke="#fff" />
+              <rect x="-10" y="17" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="18" font-size="2">Unfavorable</tspan>
+              <tspan text-anchor="middle" x="6.76" y="-1.81" fill="#fff">41.7%</tspan>
+            </text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <p-fragment>
+        <pre class="no-margins"><code class="language-html">&lt;svg viewBox="&hellip;" role="group">
+  &lt;title id="title">Approval rating.&lt;/title>
+  &lt;desc id="desc">In relation to the population.&lt;/desc>
+  &lt;g role="list">
+    &lt;g role="listitem">
+      &lt;g fill="#0a0">
+        &lt;path d="&hellip;" class="slice" />
+        &lt;rect y="11" class="marker">&lt;/rect>
+      &lt;/g>
+      &lt;text>
+        &lt;tspan y="12" class="label">Favorable&lt;/tspan>
+        &lt;tspan x="-6.06" y="-3.5">33.3%&lt;/tspan>
+      &lt;/text>
+    &lt;/g>
+    ...
+  &lt;/g>
+&lt;/svg></code><p-fragment
+  data-annotation="circle" style="top: 1em;left: calc(1em + 17ch);width: 12ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 3lh);left: calc(1em + 5ch);width: 11ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 4lh);left: calc(1em + 7ch);width: 15ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 6lh);left: calc(1em + 9ch);width: 4ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 10lh);left: calc(1em + 29ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="underline" style="top: calc(1em + 11lh);left: calc(1em + 34ch);width: 5ch;height: 1em;position: absolute;"></p-fragment></pre>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h1>
+    <p-fragment data-annotation="crossed-off;color:red">Chart.js</p-fragment><br />
+    <p-fragment><p-fragment data-annotation="crossed-off;color:red">Highcharts</p-fragment></p-fragment
+    ><br />
+    <p-fragment>
+      <p-fragment data-annotation="underline;color:red">D3.js</p-fragment>
+    </p-fragment>
+  </h1>
 </p-slide>

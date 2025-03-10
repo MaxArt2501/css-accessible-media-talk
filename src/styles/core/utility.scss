@@ -37,7 +37,7 @@
   vertical-align: middle;
 }
 
-.no-margins {
+.no-margins.no-margins {
   margin: 0;
 }
 .unpadded {
@@ -84,14 +84,12 @@
 }
 
 @keyframes blink {
-  0% {
+  0%,
+  100% {
     opacity: 0;
   }
   50% {
     opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -130,7 +128,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  > * {
+  &:not(.free) > * {
     flex: 0 0 auto;
     width: calc(50% - 0.5em);
 

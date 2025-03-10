@@ -581,22 +581,29 @@ p-fragment[data-annotation] {
   }
 }
 
-#zoomOutCircle {
-  width: 10em;
-  height: 10em;
-
-  circle {
-    cx: 50px;
-    cy: 50px;
-    r: 49px;
-    stroke-width: 2px;
-    transition: cy 9.5s, r 9.5s;
-    stroke: var(--brand-color);
-    fill: none;
+#zoomOutHeart {
+  img {
+    height: 2em;
+    transform-origin: 50% 11%;
   }
 
-  &:has(+ [aria-hidden='false']) circle {
-    cy: 500px;
-    r: 499px;
+  &:has(+ [aria-hidden='false']) img {
+    transition: transform 5s ease-in;
+    transform: scale3d(30, 30, 1);
+  }
+}
+
+#resizer {
+  height: 12em;
+  width: 15em;
+  resize: inline;
+  overflow: hidden;
+  margin: auto;
+  border: 0.1em solid;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }
