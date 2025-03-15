@@ -553,11 +553,37 @@ p-fragment[data-annotation] {
 
 #doom {
   font-family: VT323, monospace;
-  color: lime;
-  --slide-bg: #222;
+  color: #aaa;
+  --slide-bg: #000;
 
-  form:has(+ iframe[src='/doom.svg']) {
-    display: none;
+  form {
+    &:has(+ iframe[src='/doom.svg']) {
+      display: none;
+    }
+    &:has(~ p-fragment[aria-hidden='false']) {
+      label,
+      div {
+        color: inherit;
+      }
+      div:first-of-type {
+        width: 19ch;
+      }
+    }
+  }
+
+  div {
+    overflow: clip;
+    white-space: nowrap;
+
+    &:first-of-type {
+      width: 15ch;
+      transition: width var(--fragment-duration, 300ms) steps(4);
+    }
+  }
+  div:nth-of-type(2),
+  label {
+    color: transparent;
+    transition: color var(--fragment-duration, 300ms) var(--fragment-duration, 300ms) steps(1);
   }
 
   span {
@@ -605,5 +631,29 @@ p-fragment[data-annotation] {
     display: block;
     width: 100%;
     height: 100%;
+  }
+}
+
+.waving-hand {
+  font-size: 1.5em;
+  transform-origin: 50% 80%;
+
+  p-slide[aria-hidden='false'] & {
+    animation: waving var(--fragment-duration, 300ms) var(--fragment-duration, 300ms) 3 forwards;
+  }
+}
+
+@keyframes waving {
+  0% {
+    transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(-15deg);
   }
 }

@@ -74,7 +74,7 @@ deck.addEventListener('p-slides.fragmenttoggle', ({ detail: { fragment } }) => {
   if (fragment.hasAttribute('data-annotation')) {
     toggleAnnotation(fragment);
   } else if (fragment.classList.contains('sketch-rect')) {
-    console.log(ensureSketch(fragment));
+    ensureSketch(fragment);
   }
 });
 const doom = deck.querySelector('#software');

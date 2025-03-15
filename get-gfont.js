@@ -93,7 +93,7 @@ const outputCSS = definitions
     const fileName = fileNames[index];
     return `/* ${range} */\n@font-face {\n${Object.entries(def)
       .map(([property, value]) => `  ${property}: ${value};\n`)
-      .join('')}  src: url('../${fileName}') format(${src.format});\n}\n`;
+      .join('')}  src: url('../${fileName}') format(${sources[index][1].format});\n}\n`;
   })
   .join('');
 
