@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Are our media accessible?</title>
+    <base href=".." />
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="vendor/prismjs/themes/prism.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="stylesheet" href="css/presentation.css" />
+  </head>
+
+  <body>
+    <p-deck> <!--slide:cover--><p-slide class="cover">
+  <img src="img/logo-gellify.svg" alt="GELLIFY Logo" class="full-media" />
+  <h1>Are our media accessible?</h1>
+  <figure>
+    <img src="img/css-day.svg" alt="CSS Day Logo" />
+    <figcaption>Faenza, <time datetime="2025-03-28">2025-03-28</time></figcaption>
+  </figure>
+  <h4>
+    Massimo Artizzu
+    <small>Web Architect, <a href="https://gellify.com/" class="gellify">Gellify</a></small>
+  </h4>
+</p-slide>
+<p-slide class="justify-start">
+  <gfy-blob
+    clearcoatroughness="0.4"
+    clearcoat="0.23"
+    clearcolor="#ffffff"
+    color="#2a0b29"
+    envmap="img/envmap.jpg"
+    envmapintensity="0.95"
+    fixnormals=""
+    frequency="0.01"
+    metalness="0.64"
+    numberofwaves="1.47"
+    reflectivity="1"
+    roughness="0"
+    surfacepoleamount="1"
+    surfacedistort="3.2"
+    surfacefrequency="0.97"
+    surfacespeed="0.5"
+  >
+    <gfy-spotlight color="#c556c6" intensity="2.68" distance="14.47" angle="0.85" penumbra="0.45" decay="0.24" x="-4.47" y="2.4" z="0.53"></gfy-spotlight>
+    <gfy-spotlight color="#30ffe2" intensity="2.08" distance="8.73" angle="0.63" penumbra="1" decay="0" x="-1.6" y="-5.33" z="3.67"></gfy-spotlight>
+    <gfy-spotlight color="#ffffff" intensity="2.03" distance="0" angle="0.35" penumbra="1" decay="1" x="6.13" y="2.67" z="2.13"></gfy-spotlight>
+    <gfy-spotlight color="#ff4cfa" intensity="1.25" distance="7" angle="0.82" penumbra="1" decay="0.5" x="0.53" y="2.4" z="3.4"></gfy-spotlight>
+    <gfy-spotlight color="#ffffff" intensity="0.63" distance="7" angle="0.79" penumbra="1" decay="0.5" x="-3" y="-3" z="6.2"></gfy-spotlight>
+  </gfy-blob>
+  <div class="my-data">
+    <img src="img/maxart.jpg" alt="My face" class="my-face" />
+    <h2>Massimo Artizzu</h2>
+    <p>
+      Web Architect<br />
+      @<a href="https://gellify.com" class="gellify">Gellify</a>
+    </p>
+  </div>
+  <div class="my-info">
+    <h4>
+      <a href="https://github.com/MaxArt2501"><img src="img/github.svg" alt="GitHub logo" /></a> /
+      <a href="https://mastodon.social/MaxArt2501"><img src="img/mastodon.svg" alt="Mastodon logo" /></a> /
+      <a href="https://bsky.app/profile/MaxArt2501.bsky.social"><img src="img/bluesky.svg" alt="BlueSky logo" /></a> /
+      <a href="https://dev.to/MaxArt2501"><img src="img/dev-to.svg" alt="dev.to logo" /></a>
+      @MaxArt2501
+    </h4>
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h3>You can find these slides at</h3>
+  <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" style="height: 7em; margin-bottom: 1em" />
+  <a href="https://maxart2501.github.io/css-accessible-media-talk/css-day/">maxart2501.github.io/css-accessible-media-talk/css-day/</a>
+</p-slide><!--/slide:cover-->
+<!--slide:media--><p-slide>
+  <h1 class="center">
+    <code>@media<p-fragment class="collapsed">&nbsp;screen</p-fragment></code>
+  </h1>
+</p-slide>
+<p-slide>
+  <p-fragment data-annotation="crossed-off;color:red" class="balls">
+    <code>tty</code>
+    <code>tv</code>
+    <code>projection</code>
+    <code>handheld</code>
+    <code>braille</code>
+    <code>embossed</code>
+    <code>aural</code>
+  </p-fragment>
+</p-slide><!--/slide:media-->
+<!--slide:print--><p-slide>
+  <pre class="self-center big"><code class="language-html clip" style="width: 22ch">&lt;link rel="stylesheet"></code><p-fragment
+      class="collapsed"><code class="language-html clip" style="width: 14ch; text-indent: -2ch;">&lt;a media="print"></code></p-fragment><code
+      class="language-html clip" style="width: 1ch; text-indent: -2ch;">&lt;a></code></pre>
+</p-slide>
+<p-slide>
+  <article class="paper">
+    <h1>Are our media accessible?</h1>
+    <p>
+      When we develop for our stylesheet, we almost always have a screen in mind. A laptop screen, or a smartphone screen. Maybe even a tablet screen. But always a screen.
+      <img src="img/qr-slides.svg" alt="" style="width: 6em; float: inline-end; margin-inline-start: 0.5em" />
+    </p>
+    <p>
+      But it hasn't been always like this. On the contrary, one of the first media we've used to access information didn't involve a screen at all. It didn't even involve an input
+      device, RAM or a CPU. It was just paper. Printed paper. And even before, written paper. And before that, written stone or wax.
+    </p>
+    <p>
+      Of course, CSS didn't even exist back then. And neither did HTML. But that doesn't mean that putting things on paper is a thing of the past. After all, it was still the
+      <em>main</em> information exchange medium when CSS was conceived, so it's only natural that it's been the first medium to be targeted by special styling after the screen.
+    </p>
+  </article>
+</p-slide>
+<p-slide class="center">
+  <h3>Light theme?</h3>
+  <p-fragment>
+    <h1>Always.</h1>
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <h3>Like, <em>really</em> light.</h3>
+  <p-fragment><code>#ffffff</code></p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="our-header" style="margin-bottom: -1.5em">Average cost of liquids</h3>
+  <div class="chart">
+    <span style="--price: 1">Crude oil</span>
+    <span style="--price: 400">Bolgheri Sassicaia DOC 2019</span>
+    <span style="--price: 2500">Chanel no.5</span>
+    <span style="--price: 5000">Printer ink</span>
+  </div>
+  <p-notes>HP sells a printer ink cartridge that costs 65€ for 12 ml</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h3>Loss of interactivity</h3>
+  <p-fragment style="font-size: 2em">
+    <p-fragment data-annotation="crossed-off;color:red"><img src="img/keyboard.svg" class="icon" alt="Keyboard" /></p-fragment>
+    &nbsp;&nbsp;&nbsp;
+    <p-fragment data-annotation="crossed-off;color:red"><img src="img/mouse.svg" class="icon" alt="Mouse" /></p-fragment>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <p-fragment data-annotation="crossed-off;color:red" class="balls">
+    <code>&lt;button></code>
+    <code>&lt;input></code>
+    <code>&lt;select></code>
+    <code>&lt;textarea></code>
+    <code>&lt;dialog></code>
+    <code>&lt;audio></code>
+    <code>&lt;video></code>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="huge self-center"><code class="language-html">&hellip; as explained on
+&lt;a href="https://acme.com">
+  ACME's website
+&lt;/a>, we know that &hellip;</code></pre>
+</p-slide>
+<p-slide>
+  <pre class="huge self-center"><code class="language-css">@media print {
+  a</code><p-fragment class="collapsed"><code class="language-css">[href^='http']</code></p-fragment><code class="language-css">::after {
+    content: ' (' attr(href) ')';
+  }
+}</code></pre>
+</p-slide>
+<p-slide>
+  <pre class="big self-center" style="line-height: normal"><code class="language-html"
+    style="white-space: normal; line-height: normal; word-break: break-all"
+  >&lt;a href="https://sass-lang.com/playground/#eJxtkLFSwzAMhvc+hY4DupBeO8DgjGWAhaVP4NhqoqtrB1tpG7i+O3KS0h7Hoou+X/H/S6vVvUmpMMGFqCBihcbotoutw3I2SZ6jTnyZOTbEos0WWXShDvA9A7CUWqd7BeQdeSwqF8yuFOFIlhsFK9znTqcWDRdRMwWBGbUhkXQ+uzvhB8y00mZXx9B5q+CaMCs5jxaLWHDf4q9hoq/xxxCtaFFb6pJYvDzc0MQ68lQvE0vZBeBRqQq3IeKwzeiCnhXM15vNvBzYNamuUnAd48jJJ5RJ3XGA5UI2nWoG5fTacLp/7jnqW2HDBgqel+bzeEO3ek9O7nr3+v5BqYF18BbF0MIb6kN/9wSpT4z7oiP51D4VCSNtb144ItWN5KuCsyNmPHFRhVPBkfYKcpWWmz8q2loC5Ra0axtdIZPJM+fZ+QeM2Lf4">CSS Logo&lt;/a></code></pre>
+</p-slide>
+<p-slide>
+  <ul class="self-center">
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Leave it as is</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon rotate-45" alt="" /> Truncate it and&hellip;</p-fragment>
+      <ul>
+        <li>
+          <p-fragment>&emsp;<img src="img/pointing-right.svg" class="icon" alt="" /> &hellip; add a QR code</p-fragment>
+        </li>
+        <li>
+          <p-fragment
+            >&emsp;<img src="img/pointing-right.svg" class="icon" alt="" /> <p-fragment data-annotation="strike-through;color:red">&hellip; add a footnote</p-fragment></p-fragment
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <div class="self-center" style="font: 50% system-ui; width: 32ch; overflow: auto; height: 14em; z-index: 1">
+    <p>
+      <b>Web accessibility</b>, or <b>eAccessibility</b>, is the inclusive practice of ensuring there are no barriers that prevent interaction with, or access to, websites on the
+      World Wide Web by people with physical disabilities, situational disabilities, and socio-economic restrictions on bandwidth and speed. When sites are correctly designed,
+      developed and edited, more users have equal access to information and functionality.
+    </p>
+    <p>
+      For example, when a site is coded with semantically meaningful HTML, with textual equivalents provided for images and with links named meaningfully, this helps blind users
+      using text-to-speech software and/or text-to-Braille hardware. When text and images are large and/or enlargeable, it is easier for users with poor sight to read and
+      understand the content. When links are underlined (or otherwise differentiated) as well as colored, this ensures that color blind users will be able to notice them. When
+      clickable links and areas are large, this helps users who cannot control a mouse with precision. When pages are not coded in a way that hinders navigation by means of the
+      keyboard alone, or a single switch access device alone, this helps users who cannot use a mouse or even a standard keyboard. When videos are closed captioned, chaptered, or a
+      sign language version is available, deaf and hard-of-hearing users can understand the video. When flashing effects are avoided or made optional, users prone to seizures
+      caused by these effects are not put at risk. And when content is written in plain language and illustrated with instructional diagrams and animations, users with dyslexia and
+      learning difficulties are better able to understand the content. When sites are correctly built and maintained, all of these users can be accommodated without decreasing the
+      usability of the site for non-disabled users.
+    </p>
+  </div>
+  <p-fragment>
+    <article class="paper"></article>
+  </p-fragment>
+  <p-fragment data-annotation="circle" style="top: 23%; left: 64.5%; width: 1em; height: 6lh; position: absolute"></p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="big self-center" style="line-height: normal"><code class="language-css">@media print {
+  * {
+    height: auto;</code><p-fragment
+    class="vertical-collapsed">    <p-fragment
+    data-annotation="strike-through;color:red"><code class="language-css">word-break: break-word;</code></p-fragment></p-fragment><p-fragment
+    class="vertical-collapsed"><code class="language-css">    word-break: normal;
+    overflow-wrap: anywhere;</code></p-fragment><p-fragment
+    class="vertical-collapsed"><code class="language-css">    hyphens: auto;</code></p-fragment><code class="language-css">  }
+}</code></pre>
+</p-slide>
+<p-slide class="center">
+  <h1>No videos<br />No transitions<br />No animations</h1>
+  <p-notes>A printed page is basically a snapshot, so&hellip;</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>
+    No client-side work<br /><p-fragment><small>after the initial rendering</small></p-fragment>
+  </h1>
+  <p-notes>That should be obvious. But what if a user wants to print a random page? One that <em>does</em> involve runtime actions?</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>Decent font size</h1>
+  <p-notes>
+    Remember users <em>cannot</em> adjust the font size after a page has been printed. Old typewriter standards converged to adopt 12 points of font-size, which can be translated
+    to the standard 16 pixels of web size thanks to the fixed pixel-per-inch ratio. But nothing prevents us to do even better&hellip;
+  </p-notes>
+</p-slide>
+<p-slide class="stack">
+  <svg viewBox="0 0 480 270" style="height: 100%" id="classicSite">
+    <circle cx="130" cy="10" r="10" fill="#aaa"></circle>
+    <rect x="145" y="5" width="45" height="10" fill="#aaa"></rect>
+    <line x1="200" x2="280" y1="15" y2="15" stroke="#888"></line>
+    <circle cx="276.5" cy="8" r="2" fill="none" stroke="#888"></circle>
+    <line x1="278" x2="280" y1="9.5" y2="11.5" stroke="#888"></line>
+    <rect x="315" y="7" width="6" height="6" fill="#aaa" rx="2"></rect>
+    <rect x="323" y="7" width="25" height="6" fill="#aaa"></rect>
+    <circle cx="355" cy="10" r="5" fill="#aaa"></circle>
+    <line x1="120" x2="360" y1="25" y2="25" stroke="#444"></line>
+    <rect x="120" y="30" width="15" height="4" fill="#888"></rect>
+    <line x1="120" x2="135" y1="36" y2="36" stroke="#444"></line>
+    <g fill="#aaa">
+      <rect x="120" y="40" width="20" height="3"></rect>
+      <rect x="120" y="46" width="30" height="3"></rect>
+      <rect x="120" y="52" width="28" height="3"></rect>
+      <rect x="120" y="58" width="33" height="3"></rect>
+      <rect x="120" y="64" width="24" height="3"></rect>
+      <rect x="130" y="70" width="20" height="3"></rect>
+      <rect x="130" y="76" width="30" height="3"></rect>
+      <rect x="130" y="82" width="28" height="3"></rect>
+      <rect x="120" y="88" width="33" height="3"></rect>
+      <rect x="120" y="94" width="24" height="3"></rect>
+    </g>
+    <rect x="180" y="30" width="45" height="6" fill="#888"></rect>
+    <rect x="180" y="38" width="65" height="4" fill="#aaa"></rect>
+    <rect x="198" y="60" width="20" height="20" fill="red"></rect>
+    <rect x="220" y="50" width="20" height="30" fill="#00f"></rect>
+    <rect x="242" y="70" width="20" height="10" fill="#0a0"></rect>
+    <rect x="264" y="65" width="20" height="15" fill="#f60"></rect>
+    <rect x="190" y="48" width="6" height="2" fill="#888"></rect>
+    <rect x="190" y="58" width="6" height="2" fill="#888"></rect>
+    <rect x="192" y="68" width="4" height="2" fill="#888"></rect>
+    <rect x="193" y="78" width="3" height="2" fill="#888"></rect>
+    <rect x="188" y="87" width="90" height="3" fill="#aaa"></rect>
+    <rect x="180" y="92" width="94" height="3" fill="#aaa"></rect>
+    <rect x="180" y="97" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="102" width="96" height="3" fill="#aaa"></rect>
+    <rect x="180.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="183.5" y="113" width="26" height="20" rx="2" fill="#888"></rect>
+    <rect x="183.5" y="135" width="20" height="2" fill="#888"></rect>
+    <rect x="183.5" y="138" width="25" height="2" fill="#aaa"></rect>
+    <rect x="183.5" y="141" width="13" height="2" fill="#aaa"></rect>
+    <rect x="200.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="216.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="219.5" y="113" width="26" height="20" rx="2" fill="#f60"></rect>
+    <rect x="219.5" y="135" width="14" height="2" fill="#888"></rect>
+    <rect x="219.5" y="138" width="24" height="2" fill="#aaa"></rect>
+    <rect x="219.5" y="141" width="7" height="2" fill="#aaa"></rect>
+    <rect x="236.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="252.5" y="110" width="32" height="40" stroke="#aaa" rx="2" fill="none"></rect>
+    <rect x="255.5" y="113" width="26" height="20" rx="2" fill="#0a0"></rect>
+    <rect x="255.5" y="135" width="21" height="2" fill="#888"></rect>
+    <rect x="255.5" y="138" width="23" height="2" fill="#aaa"></rect>
+    <rect x="255.5" y="141" width="11" height="2" fill="#aaa"></rect>
+    <rect x="272.5" y="144" width="9" height="3" rx="1" stroke="#822a7c" stroke-width="2" fill="white"></rect>
+    <rect x="196" y="154" width="72" height="28" fill="#aaa"></rect>
+    <rect x="188" y="185" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="190" width="96" height="3" fill="#aaa"></rect>
+    <rect x="180" y="195" width="97" height="3" fill="#aaa"></rect>
+    <rect x="180" y="200" width="77" height="3" fill="#aaa"></rect>
+    <rect x="180" y="210" width="64" height="6" fill="#aaa"></rect>
+    <rect x="188" y="223" width="92" height="3" fill="#aaa"></rect>
+    <rect x="180" y="228" width="99" height="3" fill="#aaa"></rect>
+    <rect x="180" y="233" width="34" height="3" fill="#aaa"></rect>
+    <rect x="288.5" y="30.5" width="71" height="44" fill="none" stroke="#888" rx="2" />
+    <rect x="292" y="35" width="50" height="4" fill="#888" />
+    <rect x="292" y="42" width="24" height="3" fill="#aaa" />
+    <rect x="330" y="42" width="8" height="3" fill="#888" />
+    <rect x="292" y="47" width="32" height="3" fill="#aaa" />
+    <rect x="330" y="47" width="12" height="3" fill="#888" />
+    <rect x="292" y="52" width="15" height="3" fill="#aaa" />
+    <rect x="330" y="52" width="24" height="3" fill="#888" />
+    <rect x="292" y="57" width="30" height="3" fill="#aaa" />
+    <rect x="330" y="57" width="10" height="3" fill="#888" />
+    <rect x="292" y="62" width="28" height="3" fill="#aaa" />
+    <rect x="330" y="62" width="12" height="3" fill="#888" />
+    <rect x="292" y="67" width="14" height="3" fill="#aaa" />
+    <rect x="330" y="67" width="18" height="3" fill="#888" />
+    <line x1="120" x2="360" y1="240" y2="240" stroke="#444"></line>
+    <circle cx="127" cy="251" r="7" fill="#aaa"></circle>
+    <rect x="137" y="248" width="30" height="6" fill="#aaa"></rect>
+    <g fill="#aaa">
+      <rect x="180" y="246" width="30" height="2"></rect>
+      <rect x="180" y="252" width="28" height="2"></rect>
+      <rect x="180" y="258" width="33" height="2"></rect>
+      <rect x="180" y="264" width="24" height="2"></rect>
+      <rect x="240" y="246" width="20" height="2"></rect>
+      <rect x="240" y="252" width="30" height="2"></rect>
+      <rect x="240" y="258" width="28" height="2"></rect>
+      <rect x="240" y="264" width="33" height="2"></rect>
+      <rect x="300" y="246" width="33" height="2"></rect>
+      <rect x="300" y="252" width="24" height="2"></rect>
+      <rect x="300" y="258" width="20" height="2"></rect>
+      <rect x="300" y="264" width="30" height="2"></rect>
+    </g>
+  </svg>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block" id="classicAds">
+      <image x="288" y="77" href="img/car-adv.webp" height="48" width="72" />
+      <image x="196" y="154" href="img/burger-adv.webp" height="28" width="72" />
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect x="120" y="200.5" width="240" height="70" fill="#fff" stroke="#444"></rect>
+      <text x="130" y="225" font-size="16" fill="#444">🍪 We value your privacy</text>
+      <rect x="157" y="235" width="168" height="4" fill="#aaa"></rect>
+      <rect x="157" y="241" width="162" height="4" fill="#aaa"></rect>
+      <rect x="157" y="247" width="64" height="4" fill="#aaa"></rect>
+      <rect x="269" y="254" width="40" height="10" stroke="#55f" stroke-width="2" fill="#fff" rx="2"></rect>
+      <rect x="312" y="253" width="40" height="12" fill="#55f" rx="2"></rect>
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect width="480" height="270" fill="#0005"></rect>
+      <rect x="150" y="75" width="180" height="120" fill="#fff" stroke="#444"></rect>
+      <text x="240" y="90" font-size="10" fill="#444" text-anchor="middle">Subscribe to our newsletter</text>
+      <rect x="160" y="101" width="157" height="4" fill="#aaa"></rect>
+      <rect x="160" y="107" width="64" height="4" fill="#aaa"></rect>
+      <rect x="160" y="118" width="160" height="20" fill="#fff" stroke="#888" rx="2"></rect>
+      <rect x="160" y="145" width="152" height="4" fill="#aaa"></rect>
+      <rect x="160" y="151" width="92" height="4" fill="#aaa"></rect>
+      <rect x="235" y="168" width="40" height="16" stroke="#55f" stroke-width="2" fill="#fff" rx="2"></rect>
+      <rect x="280" y="167" width="40" height="18" fill="#55f" rx="2"></rect>
+    </svg>
+  </p-fragment>
+  <p-fragment>
+    <svg viewBox="0 0 480 270" style="display: block">
+      <rect width="480" height="270" fill="#000"></rect>
+      <image x="90" y="29.8" href="img/juice-adv.webp" height="210.6" width="300" />
+      <line x1="476" x2="479" y1="1" y2="4" stroke="#fff"></line>
+      <line x1="479" x2="476" y1="1" y2="4" stroke="#fff"></line>
+    </svg>
+  </p-fragment>
+  <p-fragment
+    ><img
+      src="img/pointing-right.svg"
+      style="position: absolute; rotate: 45deg; inset: 8% 4% auto auto; width: 1em; scale: -1 1"
+      alt="Finger pointing to a miniscule cross to close the full-page ad"
+  /></p-fragment>
+</p-slide>
+<p-slide>
+  <svg viewBox="0 0 480 270">
+    <use href="#classicSite" />
+    <use href="#classicAds" />
+  </svg>
+  <p-fragment data-annotation="box" style="position: absolute; width: 4.8em; height: 9.4em; top: 16%; left: 39%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 3em; height: 1.8em; top: 17%; left: 59%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 3.15em; height: 0.9em; top: 7%; left: 28.5%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 16% 64% 61% 28%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 8% 42% 87% 42%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 8.5% 28.5% 88% 63%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 31% 28.5% 53% 58.5%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 56% 45% 35% 42.2%"></p-fragment>
+  <p-fragment class="sketch-rect" style="inset: 84% 32% 8% 39%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; width: 2.2em; height: 0.8em; top: 84%; left: 28.5%"></p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="self-center big"><code class="language-css">@media print {
+  @page {
+    size: A4;</code><p-fragment class="vertical-collapsed"><code class="language-css">
+    @bottom-right {
+      content: 'Pg. ' counter(page) '/' counter(pages);
+    }</code></p-fragment><code class="language-css">  }
+}</code><p-fragment data-annotation="circle;padding:0.25,0.5" style="position: absolute;top: calc(4lh + .667em);left: calc(4ch + .5em);width: 14ch;height:1lh"></p-fragment></pre>
+</p-slide>
+<p-slide>
+  <article class="paper with-spots">
+    <span data-spot="top-left-corner"></span>
+    <span data-spot="top-left"></span>
+    <span data-spot="top-center"></span>
+    <span data-spot="top-right"></span>
+    <span data-spot="top-right-corner"></span>
+    <span data-spot="bottom-left-corner"></span>
+    <span data-spot="bottom-left"></span>
+    <span data-spot="bottom-center"></span>
+    <span data-spot="bottom-right"></span>
+    <span data-spot="bottom-right-corner"></span>
+    <span data-spot="left-top"></span>
+    <span data-spot="left-middle"></span>
+    <span data-spot="left-bottom"></span>
+    <span data-spot="right-top"></span>
+    <span data-spot="right-middle"></span>
+    <span data-spot="right-bottom"></span>
+  </article>
+  <p-fragment data-annotation="circle" style="position: absolute; bottom: 1em; left: calc(50% - 2em); width: 4em; height: 1lh"></p-fragment>
+  <p-notes> Footnotes on the <code>@bottom-center</code> slot? Yes, but: </p-notes>
+  <p-notes> no automatic way: only manually page by page, precisely controlling the content of that particolar page size; </p-notes>
+  <p-notes> in Blink-based browsers only. </p-notes>
+</p-slide>
+<p-slide>
+  <img src="img/chrome-sketch.svg" alt="Logo of Chrome" style="height: 100%" />
+</p-slide><!--/slide:print-->
+<!--slide:email--><p-slide class="center">
+  <h1>And now</h1>
+</p-slide>
+<p-slide class="center">
+  <h3>Something that is&hellip;</h3>
+  <p-fragment>
+    <h3>&hellip; <em>usually</em> seen on a screen&hellip;</h3>
+  </p-fragment>
+  <p-fragment>
+    <h3>&hellip; and <em>often</em> printed</h3>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <article class="email">
+    <hgroup>
+      <h4>Re: Re: RE: meeting</h4>
+      <p><em>me@acme.com</em>, <em>my-boss@acme.com</em>, <em>my-bosses-boss@acme.com</em>, +78 addresses</p>
+    </hgroup>
+    <p>Hello,</p>
+    <p>i hope your well</p>
+    <p>please provide your avalability for a in-person meeting asap</p>
+    <p>we need to discus the thing and we cant use email for that</p>
+    <p>regards</p>
+  </article>
+</p-slide>
+<p-slide class="center">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1em">
+    <img style="height: 5em" src="img/long-meeting.jpg" alt="People exhausted from a long meeting" />
+    <p-fragment>
+      <img style="height: 5em" src="img/long-call.jpg" alt="Woman napping in front of a PC with a Teams call on" />
+    </p-fragment>
+    <p-fragment>
+      <img style="height: 3em" src="img/long-audio.svg" alt="Fake screenshot of an audio message over 27 minutes long" />
+    </p-fragment>
+  </div>
+  <p-notes> Even if we love to hate emails, they're actually still better than long in-person meetings, or even online calls, or other forms of modern torture. </p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>HTML + CSS</h1>
+  <p-fragment>
+    <h1><img src="img/heart.svg" class="icon" alt="Heart" /></h1>
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <h1>HTML + CSS<p-fragment class="collapsed">&nbsp;+&nbsp;email</p-fragment></h1>
+  <p-fragment>
+    <h1><img src="img/sob.svg" class="icon" alt="Sobbing face" /></h1>
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <h1 style="margin-bottom: calc(0.67em - 1lh)">HTML + CSS + email<br /><p-fragment class="collapsed">+&nbsp;accessibility</p-fragment></h1>
+  <p-fragment>
+    <h1 style="translate: 0 0.5em"><img src="img/skull.svg" class="icon" alt="Skull" /></h1>
+  </p-fragment>
+</p-slide>
+<p-slide class="center">
+  <h3 class="no-margins">caniemail.com</h3>
+  <img src="img/caniemail.webp" style="height: 10em" alt="Screenshot of caniemail.com" />
+</p-slide>
+<p-slide>
+  <h1 class="center">
+    Keep it<br />simple<p-fragment>,<br />stupid <img src="img/kiss.svg" class="icon" alt="" /></p-fragment>
+    <p-fragment data-annotation="crossed-off;color:red" style="position: absolute; width: 4em; height: 2.4em; top: 2.4em; left: calc(50% - 2em)"></p-fragment>
+    <p-fragment><br /><u>stupid simple</u></p-fragment>
+  </h1>
+</p-slide>
+<p-slide>
+  <h1 class="center">
+    No <span class="JavaScript"></span>
+    <p-fragment><br />No <span class="CSS"></span></p-fragment>
+    <p-fragment><br />No <span class="HTML"></span></p-fragment>
+  </h1>
+</p-slide>
+<p-slide>
+  <article class="email terminal">
+    <hgroup>
+      <h4>Re: Re: RE: meeting</h4>
+      <p><em>me@acme.com</em>, <em>my-boss@acme.com</em>, <em>my-bosses-boss@acme.com</em>, +78 addresses</p>
+    </hgroup>
+    <p>Hello,</p>
+    <p>i hope your well</p>
+    <p>please provide your avalability for a in-person meeting asap</p>
+    <p>we need to discus the thing and we cant use email for that</p>
+    <p>regards</p>
+  </article>
+</p-slide>
+<p-slide>
+  <h1 class="center">No pictures <br />No links <br />No forms</h1>
+</p-slide>
+<p-slide>
+  <ul class="self-center">
+    <li>
+      <img src="img/pointing-right.svg" class="icon" alt="" /> Use <code>h1</code>-<code>h6</code>, <code>p</code>, <code>i</code>, <code>b</code>, <code>article</code>&hellip;
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Write down links</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Provide picture <code>alt</code> texts</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Avoid forms</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> Probably use a composer&hellip;</p-fragment>
+    </li>
+  </ul>
+  <p-notes>
+    &hellip; that will likely create 5 or more nesting levels of tables for layout - yes, even in 2025. But, believe it or not, this is usually fine, as browser engines usually
+    have heuristics that are able to recognize when a table is used for layout or actual tabular content.
+  </p-notes>
+</p-slide><!--/slide:email-->
+<!--slide:ebook--><p-slide class="center">
+  <h1>And now</h1>
+</p-slide>
+<p-slide class="center">
+  <h3>Something that is&hellip;</h3>
+  <p-fragment>
+    <h3>&hellip; <em>actually</em> a screen&hellip;</h3>
+  </p-fragment>
+  <p-fragment>
+    <h3>&hellip; but <em>looks</em> printed</h3>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <article class="ebook">
+    <hgroup>
+      <h1>Chapter 1</h1>
+      <p>Are our media accessible?</p>
+    </hgroup>
+    <p>
+      It was a dark and stormy night, and the room, dimly lit by the computer screen, was suddenly flooded by the brief flash of a lightning. When we develop for our stylesheet, we
+      almost always have a screen in mind. A laptop screen, or a smartphone screen. Maybe even a tablet screen. But always a screen. The thunder finally came: the storm was close.
+    </p>
+    <p>
+      &ldquo;But it hasn't been always like this,&rdquo; thought Alice. On the contrary, one of the first media we've used to access information didn't involve a screen at all. It
+      didn't even involve an input device, RAM or a CPU. It was just paper. Printed paper. And even before, written paper. And before that, written stone or wax.
+    </p>
+  </article>
+</p-slide>
+<p-slide>
+  <h1 class="center">Why?</h1>
+</p-slide>
+<p-slide class="center">
+  <p-notes>HTML is one of the most supported document format among e-book readers, so distributing content using HTML might be a good choice</p-notes>
+  <table class="self-center">
+    <thead>
+      <tr>
+        <th></th>
+        <th>.mobi</th>
+        <th>.epub</th>
+        <th>.pdf</th>
+        <th>.html</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Kindle</th>
+        <td>✅</td>
+        <td>✅*</td>
+        <td>🚫</td>
+        <td>✅/🚫</td>
+      </tr>
+      <tr>
+        <th>Kobo</th>
+        <td>🚫</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th>Nook</th>
+        <td>🚫</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th>Onyx</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <th>PocketBook</th>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+    </tbody>
+  </table>
+  <p-fragment data-annotation="box" style="position: absolute; width: 3.6em; height: 10em; top: 15%; left: 74%"></p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="center">eBook readers usually have a web browser</h3>
+  <p-notes
+    >And while some might notice that if you have an e-book reader, you probably also have a smartphone that's way more powerful, colorful and with a decent refresh
+    rate&hellip;</p-notes
+  >
+</p-slide>
+<p-slide style="--slide-bg: #ccc">
+  <article class="ebook">
+    <hgroup>
+      <h1>Chapter 1</h1>
+      <p>Are our media accessible?</p>
+    </hgroup>
+    <p>
+      It was a dark and stormy night, and the room, dimly lit by the computer screen, was suddenly flooded by the brief flash of a lightning. When we develop for our stylesheet, we
+      almost always have a screen in mind. A laptop screen, or a smartphone screen. Maybe even a tablet screen. But always a screen. The thunder finally came: the storm was close.
+    </p>
+    <p>
+      &ldquo;But it hasn't been always like this,&rdquo; thought Alice. On the contrary, one of the first media we've used to access information didn't involve a screen at all. It
+      didn't even involve an input device, RAM or a CPU. It was just paper. Printed paper. And even before, written paper. And before that, written stone or wax.
+    </p>
+  </article>
+  <article class="phone">
+    <hgroup>
+      <h1>Chapter 1</h1>
+      <p>Are our media accessible?</p>
+    </hgroup>
+    <p>
+      It was a dark and stormy night, and the room, dimly lit by the computer screen, was suddenly flooded by the brief flash of a lightning. When we develop for our stylesheet, we
+      almost always have a screen in mind. A laptop screen, or a smartphone screen. Maybe even a tablet screen. But always a screen. The thunder finally came: the storm was close.
+    </p>
+    <p>
+      &ldquo;But it hasn't been always like this,&rdquo; thought Alice. On the contrary, one of the first media we've used to access information didn't involve a screen at all. It
+      didn't even involve an input device, RAM or a CPU. It was just paper. Printed paper. And even before, written paper. And before that, written stone or wax.
+    </p>
+  </article>
+  <p-fragment style="display: flex; justify-content: space-between; margin-inline: 2.3em 1em"><span>4:3</span><span>2.89:1</span></p-fragment>
+  <p-fragment style="position: absolute; left: 60.5%; top: 0.5em; width: 4.75em; height: 13.2em; background: radial-gradient(white, transparent)"> </p-fragment>
+  <p-fragment style="position: absolute; left: 61.5%; top: 50%">
+    <img src="img/crack.png" alt="A screen crack" style="width: 4.5em; scale: -1 1" />
+  </p-fragment>
+  <p-notes>
+    It is also true that cellphones aren't made to read long content comfortably. They are getting longer and longer, they tire your eyes with their backlights, their readability
+    under natural light usually sucks and maybe the screen is cracked. Which may be fine for small interactions, not much for longer reads.
+  </p-notes>
+</p-slide>
+<p-slide>
+  <article class="ebook shift">
+    <hgroup>
+      <h1>Chapter 1</h1>
+      <p>Are our media accessible?</p>
+    </hgroup>
+    <p>
+      It was a dark and stormy night, and the room, dimly lit by the computer screen, was suddenly flooded by the brief flash of a lightning. When we develop for our stylesheet, we
+      almost always have a screen in mind. A laptop screen, or a smartphone screen. Maybe even a tablet screen. But always a screen. The thunder finally came: the storm was close.
+    </p>
+    <p>
+      &ldquo;But it hasn't been always like this,&rdquo; thought Alice. On the contrary, one of the first media we've used to access information didn't involve a screen at all. It
+      didn't even involve an input device, RAM or a CPU. It was just paper. Printed paper. And even before, written paper. And before that, written stone or wax.
+    </p>
+  </article>
+  <ul style="margin-left: 10em">
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> usually B/W</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> poor contrast (~10:1)</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> poor refresh rate</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> poor performances</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> single touch</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> &hellip; or no touch at all</p-fragment>
+    </li>
+    <li>
+      <p-fragment><img src="img/pointing-right.svg" class="icon" alt="" /> no audio</p-fragment>
+    </li>
+  </ul>
+  <p-fragment data-annotation="box" style="position: absolute; width: 13em; height: 4.2em; top: 13%; left: 44%"></p-fragment>
+</p-slide>
+<p-slide>
+  <h3 class="center">Kindle &lt; 5.16.4</h3>
+  <p-fragment>
+    <h1 class="center"><img src="img/sick.svg" class="icon" alt="Sick face" /></h1>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="huge self-center no-clip"><code class="language-css">@media (monochrome) {}</code>
+<p-fragment><code class="language-css">@media (color: 0) {}</code></p-fragment>
+
+<p-fragment><code class="language-css">@media (pointer: coarse) {}</code></p-fragment>
+<p-fragment><code class="language-css">@media (hover: none) {}</code></p-fragment>
+
+<p-fragment><code class="language-css">@media (update: slow) {}</code></p-fragment></pre>
+  <p-fragment class="overlay-banner uppercase bold" style="font-size: 8em; text-box-trim: trim-both">Lies.</p-fragment>
+</p-slide>
+<p-slide>
+  <table class="self-center center">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Colors</th>
+        <th>Pointer</th>
+        <th>Hover</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Kindle</th>
+        <td>16M</td>
+        <td>fine</td>
+        <td>hover</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <th>Kobo</th>
+        <td>16M</td>
+        <td>fine</td>
+        <td>hover</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <th>Nook</th>
+        <td>16M</td>
+        <td>fine</td>
+        <td>hover</td>
+        <td>N/A</td>
+      </tr>
+    </tbody>
+  </table>
+  <p-fragment data-annotation="box" style="position: absolute; inset: 40% 61% 29% 29%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; inset: 40% 45% 29% 44.5%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; inset: 40% 28.5% 29% 58.5%"></p-fragment>
+  <p-fragment data-annotation="box" style="position: absolute; inset: 40% 15% 29% 75%"></p-fragment>
+  <p-notes
+    >From my experiments, all those readers are quite consistent saying they support 16 million colors, have a fine pointer like a mouse, ability to hover stuff and&hellip; they
+    just don't support the <code>update</code> media query</p-notes
+  >
+</p-slide>
+<p-slide>
+  <code
+    >Mozilla/5.0 (Linux; U; Android 2.0; en-us;) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+    <p-fragment data-annotation="circle;color:var(--brand-color);padding:0.25,0.5">(Kobo Touch)</p-fragment></code
+  >
+  <code style="margin-top: 1em"
+    >Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+
+    <p-fragment data-annotation="circle;color:var(--brand-color);padding:0.25,0.5">Kindle/3.0+ </p-fragment></code
+  >
+</p-slide>
+<p-slide>
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)</code><p-fragment index="1" class="vertical-collapsed"><code class="language-css">          contrast(0.8);</code></p-fragment>}</pre>
+    <p-fragment style="width: auto">
+      <img
+        src="img/devtools-achromatopsia.png"
+        alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+        style="width: 8em; display: block"
+      />
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide style="filter: saturate(0)">
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)
+          contrast(0.8);
+}</code></pre>
+    <img
+      src="img/devtools-achromatopsia.png"
+      alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+      style="width: 8em"
+    />
+  </div>
+</p-slide>
+<p-slide style="filter: saturate(0) contrast(0.8)">
+  <div class="two-columns justify-center">
+    <pre class="big self-center"><code class="language-css">:root {
+  filter: saturate(0)
+          contrast(0.8);
+}</code></pre>
+    <img
+      src="img/devtools-achromatopsia.png"
+      alt="Screenshot of Chrome Devtools showing the option to simulate the vision of a person with achromatopsia under the label 'Emulate vision deficiencies'"
+      style="width: 8em"
+    />
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h1>No videos<br />No transitions<br />No animations</h1>
+  <p-notes>Even though <em>some</em> e-ink screens seems to handle that much better lately, the majority of them still support a very slow refresh rate</p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>No client-side work</h1>
+  <p-notes>
+    There <em>are</em> smartphones with an e-ink display that should allegedly have a faster processor, but many ebook readers definitely don't. So making them to the job of a
+    modern React application means making the site unaccessible as the page just hangs and won't show the content.
+  </p-notes>
+</p-slide>
+<p-slide class="center">
+  <h1>Decent font size</h1>
+</p-slide><!--/slide:ebook-->
+<!--slide:svg--><p-slide>
+  <h1 class="center" id="zoomOutHeart">
+    <img src="img/heart.svg" alt="Heart" /><br />
+    SVG
+  </h1>
+  <p-fragment></p-fragment>
+</p-slide>
+<p-slide>
+  <div id="resizer">
+    <img src="img/responsive.svg" alt="A house that gets less detailes as it gets smaller" />
+  </div>
+</p-slide>
+<p-slide id="sliceText" class="stack">
+  <!-- https://codepen.io/thebabydino/pen/GRaKbZo -->
+  <svg width="0" height="0">
+    <filter id="sliced" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        values="0 0 0 0 .93
+                0 0 0 0 .93
+                0 0 0 0 .93
+                1 0 1 0 -1"
+      ></feColorMatrix>
+      <feOffset dx="-16" dy="-2" result="topstrip"></feOffset>
+      <feColorMatrix
+        in="SourceGraphic"
+        values="0 0 0 0 .93
+                0 0 0 0 .93
+                0 0 0 0 .93
+                0 1 1 0 -1"
+      ></feColorMatrix>
+      <feOffset dx="16" dy="2"></feOffset>
+      <feBlend in="topstrip"></feBlend>
+      <feDropShadow stdDeviation="5"></feDropShadow>
+      <feDropShadow stdDeviation="7" result="outstrip"></feDropShadow>
+      <feColorMatrix
+        in="SourceGraphic"
+        values=" 0  0 0 0 .945
+                 0  0 0 0 .965
+                 0  0 0 0 .4
+                -1 -1 1 0 0"
+      ></feColorMatrix>
+      <feBlend in="outstrip"></feBlend>
+    </filter>
+    <filter id="noisey">
+      <feTurbulence type="fractalNoise" baseFrequency="3.17"></feTurbulence>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .3"></feFuncA>
+      </feComponentTransfer>
+      <feComposite in="SourceGraphic" operator="out"></feComposite>
+    </filter>
+  </svg>
+  <div contenteditable="true">CSS Day</div>
+</p-slide>
+<p-slide id="doom">
+  <form>
+    <div>C:\games\doom> doom</div>
+    <div>This will load 8.69 MB of data.</div>
+    <label>Continue? (Y/n) <span role="textbox" name="answer" contenteditable="true"></span></label>
+  </form>
+  <iframe id="software" data-src="/doom.svg"></iframe>
+  <p-fragment></p-fragment>
+</p-slide>
+<p-slide>
+  <img src="img/logo-generic.svg" alt="A generic logo" style="width: 10em" />
+  <p-fragment class="self-center">
+    <pre class="big"><code class="language-html">&lt;img src="img/logo.svg" alt="Generic company"></code></pre>
+  </p-fragment>
+  <p-fragment class="self-center">
+    <pre class="big"><code class="language-html clip" style="width: 25ch">&lt;svg viewBox="0 0 143 35"></code><p-fragment
+    class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 23ch">&lt;a role="graphics-document"></code><p-fragment
+    data-annotation="strike-through;color:red" style="display: inline-block; width: 15.5ch; height: 1em; margin-inline-start: -15.5ch; margin-bottom: -.2em;"></p-fragment><p-fragment
+    class="collapsed"><code class="language-html clip" style="text-indent: -6ch; width: 4ch">&lt;a r=" img"></code></p-fragment><code
+    class="language-html clip" style="text-indent: -6ch; width: 1ch">&lt;a a=""></code></p-fragment><p-fragment
+    class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 28ch">&lt;a aria-label="Generic company"></code></p-fragment><code
+    class="language-html clip" style="text-indent: -4ch">&lt;svg>...&lt;/svg></code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="big self-center"><code class="language-html">&lt;svg role="img"></code><p-fragment
+    class="vertical-collapsed"><code class="language-html">  &lt;title>Company chart&lt;/title></code></p-fragment><p-fragment
+    class="vertical-collapsed"><code class="language-html">  &lt;desc>At the top, the CEO...&lt;/desc></code></p-fragment><code
+    class="language-html">  ...
+&lt;/svg></code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns free justify-center">
+    <img src="img/flow-chart.svg" alt="" style="width: 8em; margin-right: 1em" />
+    <pre><code class="language-html clip" style="width: 16ch">&lt;svg viewBox="&hellip;"></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 13ch">&lt;a role="group"></code></p-fragment><code class="language-html clip" style="text-indent: -4ch; width: 1ch">&lt;svg></code>
+  <code class="language-html">&lt;title>Business plan&lt;/title>
+  &lt;path d="&hellip;"/>
+  ...
+  &lt;g></code><p-fragment
+    class="vertical-collapsed">    <code class="language-html">&lt;title>Idea&lt;/title></code></p-fragment><code class="language-html">    &lt;path class="lightbulb" d="&hellip;"/>  &nbsp;
+  &lt;/g></code><p-fragment
+    class="vertical-collapsed">  <code class="language-html clip" style="width: 5ch">&lt;text></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 10ch">&lt;a x="-9999"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch">&lt;text>Does it work?&lt;/text></code></p-fragment><code class="language-html">&lt;/svg></code></pre>
+  </div>
+</p-slide>
+<p-slide>
+  <div class="two-columns justify-center align-center">
+    <div style="width: 6em">
+      <svg viewBox="-10 -10 20 20" style="width: 100%">
+        <title id="title">Approval rating.</title>
+        <desc id="desc">In relation to the population.</desc>
+        <g stroke="#fff">
+          <path d="M0,0L-8.66,5A10,10 0 0 1 0,-10Z" fill="#0a0" />
+          <path d="M0,0L5,8.66A10,10 0 0 1 -8.66,5Z" fill="#fa0" />
+          <path d="M0,0V-10A10,10 0 0 1 5,8.66Z" fill="red" />
+        </g>
+        <g font-size="1" font-family="system-ui, sans-serif" text-anchor="middle" alignment-baseline="middle" fill="#fff">
+          <text aria-hidden="true" id="positive" x="-6.06" y="-3.5">33.3%</text>
+          <text aria-hidden="true" id="noOpinion" x="-1.81" y="6.76" fill="#000">25%</text>
+          <text aria-hidden="true" id="negative" x="6.76" y="-1.81">41.7%</text>
+        </g>
+      </svg>
+      <table style="font-size: 50%">
+        <tbody>
+          <tr>
+            <td>🟩 Favorable</td>
+          </tr>
+          <tr>
+            <td>🟨 No opinion</td>
+          </tr>
+          <tr>
+            <td>🟥 Unfavorable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="width: auto">
+      <p-fragment>
+        <pre class="no-margins" style="width: calc(2em + 50ch)"><code class="language-html clip" style="width: 16ch">&lt;svg viewBox="&hellip;"></code><p-fragment
+        class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 19ch">&lt;a aria-hidden="true"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch;">&lt;/svg></code>
+  <code class="language-html">&lt;title>Approval rating&lt;/title>
+  ...
+  &lt;text x="&hellip;" y="&hellip;">33.3%&lt;/text>
+  &lt;text x="&hellip;" y="&hellip;">25%&lt;/text>
+  &lt;text x="&hellip;" y="&hellip;">41.7%&lt;/text>
+&lt;/svg></code></pre>
+      </p-fragment>
+      <p-fragment>
+        <pre class="no-margins" style="padding-top: 0"><code class="language-html">&lt;table class="legend"></code>
+  <code class="language-html clip" style="width: 6ch">&lt;thead></code><p-fragment
+  class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 24ch">&lt;a class="visually-hidden"></code></p-fragment><code
+  class="language-html clip" style="text-indent: -6ch">&lt;thead>...&lt;/thead></code>
+  <code class="language-html">&lt;tbody>
+    &lt;tr> &lt;th>Favorable&lt;/th></code>
+      <code class="language-html clip" style="width: 3ch">&lt;td></code><p-fragment
+      class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 24ch">&lt;a class="visually-hidden"></code></p-fragment><code
+      class="language-html clip" style="text-indent: -3ch">&lt;td>33.3%&lt;/td></code> <code class="language-html">&lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></code></pre>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide>
+  <pre class="big self-center"><code class="language-css">.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}</code></pre>
+</p-slide>
+<p-slide>
+  <div class="two-columns free justify-center align-center">
+    <div>
+      <svg viewBox="-10 -10 20 30" style="width: 100%" role="group">
+        <title id="title">Approval rating.</title>
+        <desc id="desc">In relation to the population.</desc>
+        <g font-size="1" font-family="system-ui, sans-serif" fill="#222" dominant-baseline="middle" role="list">
+          <g role="listitem">
+            <g fill="#0a0">
+              <path d="M0,0L-8.66,5A10,10 0 0 1 0,-10Z" stroke="#fff" />
+              <rect x="-10" y="11" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="12" font-size="2">Favorable</tspan>
+              <tspan text-anchor="middle" x="-6.06" y="-3.5" fill="#fff">33.3%</tspan>
+            </text>
+          </g>
+          <g role="listitem">
+            <g fill="#fa0">
+              <path d="M0,0L5,8.66A10,10 0 0 1 -8.66,5Z" stroke="#fff" />
+              <rect x="-10" y="14" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="15" font-size="2">No opinion</tspan>
+              <tspan text-anchor="middle" x="-1.81" y="6.76">25%</tspan>
+            </text>
+          </g>
+          <g role="listitem">
+            <g fill="red">
+              <path d="M0,0V-10A10,10 0 0 1 5,8.66Z" stroke="#fff" />
+              <rect x="-10" y="17" rx="0.2" width="2" height="2"></rect>
+            </g>
+            <text>
+              <tspan x="-7" y="18" font-size="2">Unfavorable</tspan>
+              <tspan text-anchor="middle" x="6.76" y="-1.81" fill="#fff">41.7%</tspan>
+            </text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <p-fragment>
+        <pre class="no-margins"><code class="language-html">&lt;svg viewBox="&hellip;" role="group">
+  &lt;title id="title">Approval rating.&lt;/title>
+  &lt;desc id="desc">In relation to the population.&lt;/desc>
+  &lt;g role="list">
+    &lt;g role="listitem">
+      &lt;g fill="#0a0">
+        &lt;path d="&hellip;" class="slice" />
+        &lt;rect y="11" class="marker">&lt;/rect>
+      &lt;/g>
+      &lt;text>
+        &lt;tspan y="12" class="label">Favorable&lt;/tspan>
+        &lt;tspan x="-6.06" y="-3.5">33.3%&lt;/tspan>
+      &lt;/text>
+    &lt;/g>
+    ...
+  &lt;/g>
+&lt;/svg></code><p-fragment
+  data-annotation="circle" style="top: 1em;left: calc(1em + 15.5ch);width: 12ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 3lh);left: calc(1em + 4.5ch);width: 11ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 4lh);left: calc(1em + 6.3ch);width: 15ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 6.1lh);left: calc(1em + 8.2ch);width: 4ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 10.2lh);left: calc(1em + 26ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="underline" style="top: calc(1em + 11lh);left: calc(1em + 31ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment></pre>
+      </p-fragment>
+    </div>
+  </div>
+</p-slide>
+<p-slide class="center">
+  <h1>
+    <p-fragment data-annotation="crossed-off;color:red">Chart.js</p-fragment><br />
+    <p-fragment><p-fragment data-annotation="crossed-off;color:red">Highcharts</p-fragment></p-fragment
+    ><br />
+    <p-fragment>
+      <p-fragment data-annotation="underline;color:red">D3.js</p-fragment>
+    </p-fragment>
+  </h1>
+</p-slide><!--/slide:svg-->
+<!--slide:links--><p-slide>
+  <h3 class="our-header">Links</h3>
+  <ul class="links">
+    <li>
+      <img src="img/link.svg" class="icon" alt="" /> CSS Print Styles for PDFs and Printing - Diana MacDonald
+      <a href="https://didoesdigital.com/blog/print-styles/">didoesdigital.com/blog/print-styles</a>
+    </li>
+    <li>
+      <img src="img/link.svg" class="icon" alt="" /> Accessible SVGs: Perfect Patterns For Screen Reader Users - Carie Fisher
+      <a href="https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/">smashingmagazine.com/2021/05/accessible-svg-patterns-comparison</a>
+    </li>
+    <li>
+      <img src="img/link.svg" class="icon" alt="" /> Show HN: Doom Inside an SVG - Chris Dalke
+      <a href="https://news.ycombinator.com/item?id=41899912">news.ycombinator.com/item?id=41899912</a>
+    </li>
+  </ul>
+</p-slide>
+<p-slide>
+  <h3 class="our-header">Links</h3>
+  <ul class="links">
+    <li>
+      <img src="img/link.svg" class="icon" alt="" /> Inclusively hidden - Scott O'Hara
+      <a href="https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html">scottohara.me/blog/2017/04/14/inclusively-hidden.html</a>
+    </li>
+    <li>
+      <img src="img/link.svg" class="icon" alt="" /> Accessible SVGs - Heather Migliorisi
+      <a href="https://css-tricks.com/accessible-svgs/">css-tricks.com/accessible-svgs</a>
+    </li>
+  </ul>
+</p-slide><!--/slide:links-->
+<!--slide:the-end--><p-slide>
+  <h1 class="center"><span>That's all, folks!</span><br /><img src="img/waving.svg" class="icon waving-hand" alt="Bye!" /></h1>
+</p-slide>
+<p-slide class="gradient-4">
+  <h3 class="center final-link">
+    <a href="https://maxart2501.github.io/css-accessible-media-talk/css-day/"> maxart2501.github.io/css-accessible-media-talk/css-day/ </a>
+    <img src="img/qr-slides.svg" alt="QR Code for the presentation's link" />
+  </h3>
+</p-slide><!--/slide:the-end-->
+</p-deck>
+    <div role="progressbar" class="presentation-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" title="Presentation progress"></div>
+    <div role="toolbar" class="presentation-toolbar">
+      <button type="button" class="toggle-mode" title="Toggle speaker mode" aria-label="Toggle speaker mode (Alt-M)">
+        <svg viewBox="0 0 1 1">
+          <path stroke-width="0.1" stroke="currentColor" fill="none" d="M.05 .5h.6v-.45h-.6v.9h.6v-.45M.75 .05h.25M.75 .2h.25M.75 .35h.25" />
+        </svg>
+      </button>
+      <button type="button" class="fullscreen" title="Toggle fullscreen mode" aria-label="Toggle fullscreen mode">
+        <svg viewBox="0 0 1 1">
+          <g stroke="currentColor" fill="none" stroke-width="0.1">
+            <path d="M.05 .3v-.25h.25M.7 .05h.25v.25M.95 .7v.25h-.25M.3 .95h-.25v-.25" />
+            <path d="M.05 .3h.25v-.25M.7 .05v.25h.25M.95 .7h-.25v.25M.3 .95v-.25h-.25" />
+          </g>
+        </svg>
+      </button>
+    </div>
+    <nav class="presentation-nav">
+      <button type="button" class="previous" title="Go backward" aria-label="Go backward"></button>
+      <button type="button" class="next" title="Go forward" aria-label="Go forward"></button>
+    </nav>
+    <script type="importmap">
+      {
+        "imports": {
+          "roughjs": "./vendor/roughjs/bundled/rough.esm.js",
+          "roughjs/bin/": "./vendor/roughjs/bin/"
+        }
+      }
+    </script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/presentation.js"></script>
+    <script defer type="module" src="js/blob.js"></script>
+    <script defer src="vendor/prismjs/prism.js"></script>
+    <script defer src="vendor/prismjs/components/prism-javadoclike.js"></script>
+    <script defer src="vendor/prismjs/components/prism-typescript.js"></script>
+    <script defer src="vendor/prismjs/components/prism-jsdoc.js"></script>
+  </body>
+</html>
