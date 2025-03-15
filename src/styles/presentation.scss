@@ -1,6 +1,8 @@
 @import 'core/typography.scss';
 @import 'core/utility.scss';
 @import 'core/scaffold.scss';
+@import 'typography/lxgw-wenkai-mono-tc.scss';
+@import 'typography/fuzzy-bubbles.scss';
 @import 'modules/specific.scss';
 
 @property --sketchy-arrow-width {
@@ -47,7 +49,7 @@
   --brand-color-ant: #f60;
   --sketchy-arrow-width: 0.1em;
   --sketchy-arrow-tip-size: 20;
-  --base-font-family: Work Sans, system-ui, sans-serif;
+  --base-font-family: 'Fuzzy Bubbles', system-ui, sans-serif;
   font-family: var(--base-font-family);
 }
 
@@ -66,6 +68,13 @@ p-deck::after {
   color: white;
   mix-blend-mode: difference;
   z-index: 100;
+}
+
+code {
+  &,
+  &[class*='language-'] {
+    font-family: 'LXGW WenKai Mono TC', monospace;
+  }
 }
 
 .our-header {
