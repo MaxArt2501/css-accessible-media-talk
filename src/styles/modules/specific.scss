@@ -339,6 +339,11 @@ p-deck:not([mode='speaker']) {
 
 .terminal {
   &#{&} {
+    border: 3em solid antiquewhite;
+    width: 32em;
+    height: 25.75em;
+    border-radius: 1em;
+    padding: .5em;
     font-family: VT323, ui-monospace, monospace;
     background: repeating-linear-gradient(to bottom, #001100 0 0.08em, #001800 0.12em 0.2em);
     color: lime;
@@ -349,6 +354,17 @@ p-deck:not([mode='speaker']) {
     ::after {
       font-weight: inherit;
       filter: drop-shadow(0 0 0.5em color-mix(in srgb, transparent, currentColor 25%));
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: currentColor;
+      height: .2em;
+      width: .5em;
+      bottom: -1.6em;
+      right: 0;
+      box-shadow: 0 0 .1em #0005;
     }
   }
 }

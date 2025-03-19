@@ -70,11 +70,10 @@ p-deck::after {
   z-index: 100;
 }
 
-code {
-  &,
-  &[class*='language-'] {
-    font-family: 'LXGW WenKai Mono TC', monospace;
-  }
+code,
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: 'LXGW WenKai Mono TC', monospace;
 }
 
 .our-header {
