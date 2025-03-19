@@ -79,7 +79,7 @@
   </h1>
 </p-slide>
 <p-slide>
-  <p-fragment data-annotation="crossed-off;color:red" class="balls">
+  <p-fragment data-annotation="crossed-off;color:red;strokeWidth:.4em" class="balls">
     <code>tty</code>
     <code>tv</code>
     <code>projection</code>
@@ -140,7 +140,7 @@
   </p-fragment>
 </p-slide>
 <p-slide>
-  <p-fragment data-annotation="crossed-off;color:red" class="balls">
+  <p-fragment data-annotation="crossed-off;color:red;strokeWidth:.4em" class="balls">
     <code>&lt;button></code>
     <code>&lt;input></code>
     <code>&lt;select></code>
@@ -157,8 +157,8 @@
 &lt;/a>, we know that &hellip;</code></pre>
 </p-slide>
 <p-slide>
-  <pre class="huge self-center"><code class="language-css">@media print {
-  a</code><p-fragment class="collapsed"><code class="language-css">[href^='http']</code></p-fragment><code class="language-css">::after {
+  <pre class="huge self-center"><code class="language-css">@media print {</code>
+  <code class="language-css clip" style="width: 1ch">a{}</code><p-fragment class="collapsed"><code class="language-css clip" style="width: 14ch">[href^='http']{}</code></p-fragment><code class="language-css">::after {
     content: ' (' attr(href) ')';
   }
 }</code></pre>
@@ -189,7 +189,7 @@
   </ul>
 </p-slide>
 <p-slide>
-  <div class="self-center" style="font: 50% system-ui; width: 32ch; overflow: auto; height: 14em; z-index: 1">
+  <div class="self-center" style="font: 50% system-ui; width: 17em; overflow: auto; height: 14em; z-index: 1">
     <p>
       <b>Web accessibility</b>, or <b>eAccessibility</b>, is the inclusive practice of ensuring there are no barriers that prevent interaction with, or access to, websites on the
       World Wide Web by people with physical disabilities, situational disabilities, and socio-economic restrictions on bandwidth and speed. When sites are correctly designed,
@@ -899,7 +899,7 @@
     <div>This will load 8.69 MB of data.</div>
     <label>Continue? (Y/n) <span role="textbox" name="answer" contenteditable="true"></span></label>
   </form>
-  <iframe id="software" data-src="/doom.svg"></iframe>
+  <iframe id="software" data-src="doom.svg"></iframe>
   <p-fragment></p-fragment>
 </p-slide>
 <p-slide>
@@ -910,7 +910,7 @@
   <p-fragment class="self-center">
     <pre class="big"><code class="language-html clip" style="width: 25ch">&lt;svg viewBox="0 0 143 35"></code><p-fragment
     class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 23ch">&lt;a role="graphics-document"></code><p-fragment
-    data-annotation="strike-through;color:red" style="display: inline-block; width: 15.5ch; height: 1em; margin-inline-start: -15.5ch; margin-bottom: -.2em;"></p-fragment><p-fragment
+    data-annotation="strike-through;color:red" style="display: inline-block; width: 17ch; height: 1em; margin-inline-start: -17ch; margin-bottom: -.2em;"></p-fragment><p-fragment
     class="collapsed"><code class="language-html clip" style="text-indent: -6ch; width: 4ch">&lt;a r=" img"></code></p-fragment><code
     class="language-html clip" style="text-indent: -6ch; width: 1ch">&lt;a a=""></code></p-fragment><p-fragment
     class="vertical-collapsed">     <code class="language-html clip" style="text-indent: -3ch; width: 28ch">&lt;a aria-label="Generic company"></code></p-fragment><code
@@ -927,7 +927,7 @@
 <p-slide>
   <div class="two-columns free justify-center">
     <img src="img/flow-chart.svg" alt="" style="width: 8em; margin-right: 1em" />
-    <pre><code class="language-html clip" style="width: 16ch">&lt;svg viewBox="&hellip;"></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 13ch">&lt;a role="group"></code></p-fragment><code class="language-html clip" style="text-indent: -4ch; width: 1ch">&lt;svg></code>
+    <pre><code class="language-html clip" style="width: 17ch">&lt;svg viewBox="&hellip;"></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 13ch">&lt;a role="group"></code></p-fragment><code class="language-html clip" style="text-indent: -4ch; width: 1ch">&lt;svg></code>
   <code class="language-html">&lt;title>Business plan&lt;/title>
   &lt;path d="&hellip;"/>
   ...
@@ -970,7 +970,7 @@
     </div>
     <div style="width: auto">
       <p-fragment>
-        <pre class="no-margins" style="width: calc(2em + 50ch)"><code class="language-html clip" style="width: 16ch">&lt;svg viewBox="&hellip;"></code><p-fragment
+        <pre class="no-margins" style="width: calc(2em + 50ch)"><code class="language-html clip" style="width: 17ch">&lt;svg viewBox="&hellip;"></code><p-fragment
         class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 19ch">&lt;a aria-hidden="true"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch;">&lt;/svg></code>
   <code class="language-html">&lt;title>Approval rating&lt;/title>
   ...
@@ -1066,12 +1066,12 @@
     ...
   &lt;/g>
 &lt;/svg></code><p-fragment
-  data-annotation="circle" style="top: 1em;left: calc(1em + 15.5ch);width: 12ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
-  data-annotation="circle" style="top: calc(1em + 3lh);left: calc(1em + 4.5ch);width: 11ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
-  data-annotation="circle" style="top: calc(1em + 4lh);left: calc(1em + 6.3ch);width: 15ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
-  data-annotation="circle" style="top: calc(1em + 6.1lh);left: calc(1em + 8.2ch);width: 4ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
-  data-annotation="circle" style="top: calc(1em + 10.2lh);left: calc(1em + 26ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
-  data-annotation="underline" style="top: calc(1em + 11lh);left: calc(1em + 31ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment></pre>
+  data-annotation="circle" style="top: 1em;left: calc(1em + 18ch);width: 12ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 3lh);left: calc(1em + 5ch);width: 11ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 4lh);left: calc(1em + 7ch);width: 15ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 7lh);left: calc(1em + 9ch);width: 4ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="circle" style="top: calc(1em + 10lh);left: calc(1em + 29ch);width: 5ch;height: 1lh;position: absolute;"></p-fragment><p-fragment
+  data-annotation="underline" style="top: calc(1em + 11lh);left: calc(1em + 34ch);width: 5ch;height: 1em;position: absolute;"></p-fragment></pre>
       </p-fragment>
     </div>
   </div>
