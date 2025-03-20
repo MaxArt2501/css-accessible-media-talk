@@ -339,15 +339,16 @@ p-deck:not([mode='speaker']) {
 
 .terminal {
   &#{&} {
-    border: 3em solid antiquewhite;
     width: 32em;
     height: 25.75em;
-    border-radius: 1em;
     padding: .5em;
-    font-family: VT323, ui-monospace, monospace;
+    border: 3em solid antiquewhite;
+    border-radius: 1em;
     background: repeating-linear-gradient(to bottom, #001100 0 0.08em, #001800 0.12em 0.2em);
-    color: lime;
+    font-family: VT323, ui-monospace, monospace;
     font-weight: normal;
+    color: lime;
+    overflow: visible;
 
     *,
     ::before,
