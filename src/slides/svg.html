@@ -80,14 +80,16 @@
 <p-slide>
   <div class="two-columns free justify-center">
     <img src="img/flow-chart.svg" alt="" style="width: 8em; margin-right: 1em" />
-    <pre><code class="language-html clip" style="width: 17ch">&lt;svg viewBox="&hellip;"></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 13ch">&lt;a role="group"></code></p-fragment><code class="language-html clip" style="text-indent: -4ch; width: 1ch">&lt;svg></code>
+    <pre><code class="language-html clip" style="width: 17ch">&lt;svg viewBox="&hellip;"></code><p-fragment class="collapsed"><code
+      class="language-html clip" style="text-indent: -2ch; width: 13ch">&lt;a role="group"></code></p-fragment><code class="language-html clip" style="text-indent: -4ch; width: 1ch">&lt;svg></code>
   <code class="language-html">&lt;title>Business plan&lt;/title>
   &lt;path d="&hellip;"/>
   ...
   &lt;g></code><p-fragment
     class="vertical-collapsed">    <code class="language-html">&lt;title>Idea&lt;/title></code></p-fragment><code class="language-html">    &lt;path class="lightbulb" d="&hellip;"/>  &nbsp;
   &lt;/g></code><p-fragment
-    class="vertical-collapsed">  <code class="language-html clip" style="width: 5ch">&lt;text></code><p-fragment class="collapsed"><code class="language-html clip" style="text-indent: -2ch; width: 10ch">&lt;a x="-9999"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch">&lt;text>Does it work?&lt;/text></code></p-fragment><code class="language-html">&lt;/svg></code></pre>
+    class="vertical-collapsed">  <code class="language-html clip" style="width: 5ch">&lt;text></code><p-fragment class="collapsed"><code
+    class="language-html clip" style="text-indent: -2ch; width: 10ch">&lt;a x="-9999"></code></p-fragment><code class="language-html clip" style="text-indent: -5ch">&lt;text>Does it work?&lt;/text></code></p-fragment><code class="language-html">&lt;/svg></code></pre>
   </div>
 </p-slide>
 <p-slide>
@@ -266,6 +268,10 @@
     <symbol id="checklist" title="Icon of a document with check on it" viewBox="0 0 80 80">
       <defs>
         <style>
+          .responsive-mark {
+            stroke: #333;
+            fill: none;
+          }
           @container (max-width: 8vw) {
             * {
               stroke-width: 2px;
@@ -299,21 +305,21 @@
           }
         </style>
       </defs>
-      <rect x="13.5" y="5.5" width="53" height="69" stroke="#000" fill="none" />
+      <rect class="responsive-mark" x="13.5" y="5.5" width="53" height="69" />
       <g>
-        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
-        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
-        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+        <path class="responsive-mark" d="M20,16l3,4 3,-7" />
+        <line class="responsive-mark" x1="30" y1="16.5" x2="60" y2="16.5" />
+        <line class="responsive-mark" x1="30" y1="19.5" x2="60" y2="19.5" />
       </g>
       <g transform="translate(0, 20)">
-        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
-        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
-        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+        <path class="responsive-mark" d="M20,16l3,4 3,-7" />
+        <line class="responsive-mark" x1="30" y1="16.5" x2="60" y2="16.5" />
+        <line class="responsive-mark" x1="30" y1="19.5" x2="60" y2="19.5" />
       </g>
       <g transform="translate(0, 40)">
-        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
-        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
-        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+        <path class="responsive-mark" d="M20,16l3,4 3,-7" />
+        <line class="responsive-mark" x1="30" y1="16.5" x2="60" y2="16.5" />
+        <line class="responsive-mark" x1="30" y1="19.5" x2="60" y2="19.5" />
       </g>
     </symbol>
   </svg>
@@ -321,13 +327,31 @@
     <div>
       <svg class="responsive-icon" style="width: 16vw"><use href="#checklist" /></svg>
       <p-fragment>
-        <svg class="responsive-icon" style="width: 8vw"><use href="#checklist" /></svg>
+        <div class="flex justify-center">
+          <div style="position: relative">
+            <p-fragment index="1" data-annotation="crossed-off;color:red">
+              <svg class="unresponsive-icon" style="width: 8vw"><use href="#checklist" /></svg>
+            </p-fragment>
+          </div>
+          <p-fragment index="1" class="collapsed">
+            <svg class="responsive-icon" style="width: 8vw"><use href="#checklist" /></svg>
+          </p-fragment>
+        </div>
       </p-fragment>
       <p-fragment>
-        <svg class="responsive-icon" style="width: 4vw"><use href="#checklist" /></svg>
+        <div class="flex justify-center">
+          <div style="position: relative">
+            <p-fragment index="2" data-annotation="crossed-off;color:red">
+              <svg class="unresponsive-icon" style="width: 4vw"><use href="#checklist" /></svg>
+            </p-fragment>
+          </div>
+          <p-fragment index="2" class="collapsed">
+            <svg class="responsive-icon" style="width: 4vw"><use href="#checklist" /></svg>
+          </p-fragment>
+        </div>
       </p-fragment>
     </div>
-    <p-fragment>
+    <p-fragment class="collapsed" index="3">
       <pre><code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
   &lt;defs>
     &lt;style>
@@ -342,23 +366,28 @@
   &lt;/defs>
   &lt;rect ... />
   &lt;g>...&lt;/g>
-&lt;/svg></code></pre>
+&lt;/svg></code><p-fragment
+  index="3" data-annotation="box" style="position: absolute;top: calc(1em + 4lh);left: calc(.667em + 6ch);width: 27ch;height: 3lh;"></p-fragment><p-fragment
+  index="3" data-annotation="box" style="position: absolute;top: calc(1em + 7lh);left: calc(.667em + 6ch);width: 27ch;height: 3lh;"></p-fragment></pre>
     </p-fragment>
   </div>
-  <p-fragment class="from-above" style="rotate: -30deg; translate: 10em 3em; box-shadow: 0 0 1em #0005;">
+  <p-fragment class="from-above" index="4" style="rotate: -30deg; translate: 10em 3em; box-shadow: 0 0 1em #0005">
     <pre class="huge no-margins"><code class="language-html">&lt;img src="checklist.svg"></code></pre>
   </p-fragment>
 </p-slide>
 <p-slide>
   <pre class="self-center no-clip"><code class="language-html">&lt;div></code>
-  <code class="language-html clip" style="width: 24ch;">&lt;svg viewBox="0 0 80 80"></code><p-fragment index="1" class="collapsed"><code class="language-html clip" style="width: 31ch; text-indent: -2ch;">&lt;a style="container: inline-size"></code></p-fragment></p-fragment><code class="language-html clip" style="text-indent: -2ch;">&lt;a></code>
+  <code class="language-html clip" style="width: 24ch;">&lt;svg viewBox="0 0 80 80"></code><p-fragment
+    index="1" class="collapsed"><code class="language-html clip" style="width: 36ch; text-indent: -2ch;">&lt;a style="container-type: inline-size"></code></p-fragment><code class="language-html clip" style="text-indent: -2ch;">&lt;a></code>
     <code class="language-html">&lt;defs>
       &lt;style></code>
         <code class="language-css">* { stroke-width: 4px; }</code>
-        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 24px) {</code>
+        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment
+        class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 24px) {</code>
           <code class="language-css">* { stroke-width: 2px; }
         }</code>
-        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 48px) {</code>
+        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment
+        class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 48px) {</code>
           <code class="language-css">* { stroke-width: 1px; }
         }</code><code class="language-html">
       &lt;/style>

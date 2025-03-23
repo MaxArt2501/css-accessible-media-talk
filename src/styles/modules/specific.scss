@@ -704,11 +704,12 @@ p-fragment[data-annotation] {
   }
 }
 
-.responsive-icon {
+.responsive-icon,
+.unresponsive-icon {
   display: block;
   aspect-ratio: 1;
+  margin: 0.5em;
+}
+.responsive-icon {
   container-type: inline-size;
-  margin: 0.5em auto;
-  box-shadow: 0 0 0.5em #000a;
-  border-radius: 5%;
 }
