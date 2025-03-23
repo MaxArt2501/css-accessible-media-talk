@@ -341,7 +341,7 @@ p-deck:not([mode='speaker']) {
   &#{&} {
     width: 32em;
     height: 25.75em;
-    padding: .5em;
+    padding: 0.5em;
     border: 3em solid antiquewhite;
     border-radius: 1em;
     background: repeating-linear-gradient(to bottom, #001100 0 0.08em, #001800 0.12em 0.2em);
@@ -361,11 +361,11 @@ p-deck:not([mode='speaker']) {
       content: '';
       position: absolute;
       background-color: currentColor;
-      height: .2em;
-      width: .5em;
+      height: 0.2em;
+      width: 0.5em;
       bottom: -1.6em;
       right: 0;
-      box-shadow: 0 0 .1em #0005;
+      box-shadow: 0 0 0.1em #0005;
     }
   }
 }
@@ -675,4 +675,40 @@ p-fragment[data-annotation] {
   100% {
     transform: rotate(-15deg);
   }
+}
+
+.favicon {
+  height: 5em;
+  width: 6em;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 128"><path d="M0,128A32,32 0 0 0 32,96v-64A32,32 0 0 1 64,0h-64" fill="%230005"/></svg>')
+    0 0 / auto 100% no-repeat;
+  border-top: 1em solid #0005;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 2em;
+    height: 2em;
+    background-color: #222;
+    margin: 1em 2em;
+    mask-image: url(../favicon.svg);
+  }
+
+  &.dark {
+    background-color: #444;
+    margin-top: 1em;
+
+    &::before {
+      background-color: #fff;
+    }
+  }
+}
+
+.responsive-icon {
+  display: block;
+  aspect-ratio: 1;
+  container-type: inline-size;
+  margin: 0.5em auto;
+  box-shadow: 0 0 0.5em #000a;
+  border-radius: 5%;
 }

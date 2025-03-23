@@ -5,11 +5,6 @@
   </h1>
   <p-fragment></p-fragment>
 </p-slide>
-<p-slide>
-  <div id="resizer">
-    <img src="img/responsive.svg" alt="A house that gets less detailes as it gets smaller" />
-  </div>
-</p-slide>
 <p-slide id="sliceText" class="stack">
   <!-- https://codepen.io/thebabydino/pen/GRaKbZo -->
   <svg width="0" height="0">
@@ -243,4 +238,131 @@
       <p-fragment data-annotation="underline;color:red">D3.js</p-fragment>
     </p-fragment>
   </h1>
+</p-slide>
+<p-slide>
+  <div class="two-columns free justify-center" style="gap: 0.9em">
+    <pre class="self-center no-clip"><code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 85"></code><p-fragment
+      class="vertical-collapsed"><code class="language-html">  &lt;defs>
+    &lt;style></code><p-fragment
+      class="vertical-collapsed"><code class="language-css">      @media (prefers-color-scheme: dark) {
+        * { fill: white; }
+      }</code></p-fragment><code class="language-html">    &lt;/style>
+  &lt;/defs></code></p-fragment><code class="language-html">  &lt;path fill="#222" d="..."/>
+  &lt;circle cx="42.5" cy="19.04" r="8.22" fill="#222"/>
+&lt;/svg></code><p-fragment data-annotation="box" style="position: absolute;top: calc(1em + 3lh);left: calc(.667em + 6ch);width: 38ch;height: 3lh;"></p-fragment></pre>
+    <p-fragment class="collapsed">
+      <div class="favicon light"></div>
+      <div class="favicon dark"></div>
+    </p-fragment>
+  </div>
+</p-slide>
+<p-slide>
+  <div id="resizer">
+    <img src="img/responsive.svg" alt="A house that gets less detailes as it gets smaller" />
+  </div>
+</p-slide>
+<p-slide>
+  <svg style="display: none">
+    <symbol id="checklist" title="Icon of a document with check on it" viewBox="0 0 80 80">
+      <defs>
+        <style>
+          @container (max-width: 8vw) {
+            * {
+              stroke-width: 2px;
+            }
+            line:last-of-type {
+              display: none;
+            }
+            path {
+              d: path('M20,16,l4,5.33 4,-9.33');
+            }
+          }
+          @container (max-width: 5vw) {
+            * {
+              stroke-width: 4px;
+            }
+            g:first-of-type {
+              transform: translateY(8px);
+            }
+            g:nth-of-type(2) {
+              transform: translateY(35px);
+            }
+            g:last-of-type {
+              display: none;
+            }
+            path {
+              d: path('M22,16,l6,8 6,-14');
+            }
+            line {
+              transform: scaleX(0.65) translateX(30px);
+            }
+          }
+        </style>
+      </defs>
+      <rect x="13.5" y="5.5" width="53" height="69" stroke="#000" fill="none" />
+      <g>
+        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+      </g>
+      <g transform="translate(0, 20)">
+        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+      </g>
+      <g transform="translate(0, 40)">
+        <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+        <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+        <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+      </g>
+    </symbol>
+  </svg>
+  <div class="two-columns free justify-center align-center" style="gap: 1em">
+    <div>
+      <svg class="responsive-icon" style="width: 16vw"><use href="#checklist" /></svg>
+      <p-fragment>
+        <svg class="responsive-icon" style="width: 8vw"><use href="#checklist" /></svg>
+      </p-fragment>
+      <p-fragment>
+        <svg class="responsive-icon" style="width: 4vw"><use href="#checklist" /></svg>
+      </p-fragment>
+    </div>
+    <p-fragment>
+      <pre><code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  &lt;defs>
+    &lt;style>
+      * { stroke-width: 4px; }
+      @media (min-width: 24px) {
+        * { stroke-width: 2px; }
+      }
+      @media (min-width: 48px) {
+        * { stroke-width: 1px; }
+      }
+    &lt;/style>
+  &lt;/defs>
+  &lt;rect ... />
+  &lt;g>...&lt;/g>
+&lt;/svg></code></pre>
+    </p-fragment>
+  </div>
+  <p-fragment class="from-above" style="rotate: -30deg; translate: 10em 3em; box-shadow: 0 0 1em #0005;">
+    <pre class="huge no-margins"><code class="language-html">&lt;img src="checklist.svg"></code></pre>
+  </p-fragment>
+</p-slide>
+<p-slide>
+  <pre class="self-center no-clip"><code class="language-html">&lt;div></code>
+  <code class="language-html clip" style="width: 24ch;">&lt;svg viewBox="0 0 80 80"></code><p-fragment index="1" class="collapsed"><code class="language-html clip" style="width: 31ch; text-indent: -2ch;">&lt;a style="container: inline-size"></code></p-fragment></p-fragment><code class="language-html clip" style="text-indent: -2ch;">&lt;a></code>
+    <code class="language-html">&lt;defs>
+      &lt;style></code>
+        <code class="language-css">* { stroke-width: 4px; }</code>
+        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 24px) {</code>
+          <code class="language-css">* { stroke-width: 2px; }
+        }</code>
+        <p-fragment data-annotation="strike-through;color:red"><code class="language-css clip" style="width: 6ch">@media {}</code></p-fragment><p-fragment class="collapsed"><code class="language-css clip" style="width: 11ch"> @container {}</code></p-fragment><code class="language-css clip" style="text-indent: -2ch;">@m (min-width: 48px) {</code>
+          <code class="language-css">* { stroke-width: 1px; }
+        }</code><code class="language-html">
+      &lt;/style>
+    &lt;/defs>...
+  &lt;/svg> Checklist
+&lt;/div></code></pre>
 </p-slide>
