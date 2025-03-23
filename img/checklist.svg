@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      @media (max-width: 450px) {
+        * {
+          stroke-width: 2px;
+        }
+
+        line:first-of-type {
+          transform: translateY(-1px);
+        }
+
+        line:last-of-type {
+          display: none;
+        }
+
+        path {
+          d: path('M20,16,l4,5.33 4,-9.33')
+        }
+      }
+
+      @media (max-width: 300px) {
+        * {
+          stroke-width: 4px;
+        }
+
+        g:first-of-type {
+          transform: translateY(8px);
+        }
+
+        g:nth-of-type(2) {
+          transform: translateY(35px);
+        }
+
+        g:last-of-type {
+          display: none;
+        }
+
+        path {
+          d: path('M22,16,l6,8 6,-14')
+        }
+
+        line {
+          transform: scale(.65, 1) translateX(30px);
+        }
+      }
+    </style>
+  </defs>
+  <rect x="13.5" y="5.5" width="53" height="69" stroke="#000" fill="none" />
+
+  <g>
+    <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+    <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+    <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+  </g>
+  <g transform="translate(0, 20)">
+    <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+    <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+    <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+  </g>
+  <g transform="translate(0, 40)">
+    <path d="M20,16l3,4 3,-7" stroke="#000" fill="none" />
+    <line x1="30" y1="16.5" x2="60" y2="16.5" stroke="#000" />
+    <line x1="30" y1="19.5" x2="60" y2="19.5" stroke="#000" />
+  </g>
+</svg>

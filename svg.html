@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG test</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+      }
+      table {
+        font-size: 2rem;
+      }
+      tbody th {
+        text-align: start;
+        font-weight: normal;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          background-color: var(--box-color);
+          border-radius: 0.25em;
+          margin-inline-end: 0.25em;
+          vertical-align: -0.1em;
+        }
+      }
+      thead,
+      td {
+        position: absolute;
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <svg viewBox="-10 -10 20 20" role="do" _aria-labelledby="title desc" style="width: 40rem">
+      <title id="title">Indice di gradimento.</title>
+      <desc id="desc">In percentuale rispetto alla popolazione.</desc>
+      <text style="display: none">Questo è altro testo ancora.</text>
+      <g stroke="#fff">
+        <path d="M0,0L-8.66,5A10,10 0 0 1 0,-10Z" fill="#0a0" />
+        <path d="M0,0L5,8.66A10,10 0 0 1 -8.66,5Z" fill="#fa0" />
+        <path d="M0,0V-10A10,10 0 0 1 5,8.66Z" fill="red" />
+      </g>
+      <g font-size="1" font-family="system-ui, sans-serif" text-anchor="middle" alignment-baseline="middle" fill="#fff">
+        <text aria-hidden="true" id="positive" x="-6.06" y="-3.5">33.3%</text>
+        <text aria-hidden="true" id="noOpinion" x="-1.81" y="6.76" fill="#000">25%</text>
+        <text aria-hidden="true" id="negative" x="6.76" y="-1.81">41.7%</text>
+      </g>
+    </svg>
+    <table>
+      <thead>
+        <tr>
+          <th>Opinione</th>
+          <th>Percentuale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th style="--box-color: #0a0">Positivo</th>
+          <td>
+            <span aria-labelledby="positive" role="none"></span>
+          </td>
+          <!-- <td>33.3%</td> -->
+        </tr>
+        <tr>
+          <th style="--box-color: #fa0">Nessuna opinione</th>
+          <td><span aria-labelledby="noOpinion"></span></td>
+          <!-- <td>25%</td> -->
+        </tr>
+        <tr>
+          <th style="--box-color: red">Negativo</th>
+          <td><span aria-labelledby="negative"></span></td>
+          <!-- <td>41.7%</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
