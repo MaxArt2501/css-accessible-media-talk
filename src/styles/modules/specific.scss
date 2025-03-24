@@ -79,8 +79,10 @@ p-deck:not([mode='speaker']) {
   font-size: 75%;
   gap: 0 0.5em;
   justify-content: center;
+  width: 25.5em;
+  margin: 0 auto;
 
-  > code {
+  &#{&} > code {
     width: 6em;
     aspect-ratio: 1;
     text-align: center;
@@ -88,6 +90,27 @@ p-deck:not([mode='speaker']) {
     margin-block: -0.175em;
     background: url(../img/ball.svg);
     box-shadow: none;
+    font-weight: bold;
+  }
+
+  p-deck:not([mode='speaker']) & {
+    code {
+      scale: 3;
+      opacity: 0;
+      transition: scale var(--fragment-duration), opacity var(--fragment-duration);
+    }
+  }
+  p-deck:not([mode='speaker']) [aria-hidden="false"] & {
+    code {
+      scale: 1;
+      opacity: 1;
+    }
+    @for $i from 1 through 7 {
+      :nth-child(#{$i}) {
+        // animation: from-above var(--fragment-duration, 300ms) calc(var(--fragment-duration, 300ms) * #{$i / 7}) 1 forwards;
+        transition-delay: calc(var(--fragment-duration) * #{$i / 7});
+      }
+    }
   }
 }
 
