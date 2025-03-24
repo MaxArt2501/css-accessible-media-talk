@@ -68,11 +68,6 @@ p-deck::after {
   z-index: 100;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: url('../img/code-bg.svg') 0 / 10em;
-}
-
 code,
 code[class*='language-'],
 pre[class*='language-'] {
