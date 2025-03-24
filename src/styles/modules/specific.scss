@@ -1,9 +1,4 @@
 @font-face {
-  font-family: 'Consolas';
-  font-display: swap;
-  src: local('Consolas'), url(../fonts/consolas.ttf) format('truetype');
-}
-@font-face {
   font-family: 'VT323';
   font-display: swap;
   src: local('VT323'), url(../fonts/vt323.ttf) format('truetype');
@@ -576,7 +571,7 @@ p-fragment[data-annotation] {
   --slide-bg: #000;
 
   form {
-    &:has(+ iframe[src='/doom.svg']) {
+    &:has(+ iframe[src]:not([src=''])) {
       display: none;
     }
     &:has(~ p-fragment[aria-hidden='false']) {
