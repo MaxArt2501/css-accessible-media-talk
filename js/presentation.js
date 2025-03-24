@@ -77,6 +77,18 @@ deck.addEventListener('p-slides.fragmenttoggle', ({ detail: { fragment } }) => {
     ensureSketch(fragment);
   }
 });
+
+const css = String.raw;
+const deckStyle = new CSSStyleSheet();
+deckStyle.replaceSync(
+  css`
+    header {
+      font-family: system-ui, sans-serif;
+    }
+  `
+);
+deck.shadowRoot.adoptedStyleSheets.push(deckStyle);
+
 const doom = deck.querySelector('#software');
 const pseudoInput = deck.querySelector('[name="answer"]');
 pseudoInput.addEventListener('keydown', ({ code, target: { textContent } }) => {
