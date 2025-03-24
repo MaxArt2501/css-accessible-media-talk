@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      article {
+        width: 50ch;
+        margin: auto;
+      }
+      footer {
+        display: none;
+      }
+      @media print {
+        article {
+          break-after: page;
+        }
+        :is(article, footer):first-of-type {
+          page: first;
+        }
+        :is(article, footer):last-of-type {
+          page: last;
+        }
+
+        footer {
+          display: block;
+          position: fixed;
+          inset: auto 0 0;
+          padding-block: 5mm 2cm;
+          margin-inline: 2cm;
+          border-top: 1px solid;
+        }
+
+        @page {
+          size: a4;
+
+          /* @bottom-right {
+            content: 'Page ' counter(page) ' of ' counter(pages);
+          } */
+          @top-left-corner {
+            content: 'tlc';
+            white-space: nowrap;
+          }
+          @top-left {
+            content: 'tl';
+            white-space: nowrap;
+          }
+          @top-center {
+            content: 'tc';
+            white-space: nowrap;
+          }
+          @top-right {
+            content: 'tr';
+            white-space: nowrap;
+          }
+          @top-right-corner {
+            content: 'trc';
+            white-space: nowrap;
+          }
+          @bottom-left-corner {
+            content: 'blc';
+            white-space: nowrap;
+          }
+          @bottom-left {
+            content: 'bl';
+            white-space: nowrap;
+          }
+          @bottom-center {
+            content: 'bc';
+            white-space: nowrap;
+          }
+          @bottom-right {
+            content: 'br';
+            white-space: nowrap;
+          }
+          @bottom-right-corner {
+            content: 'brc';
+            white-space: nowrap;
+          }
+          @left-top {
+            content: 'lt';
+            white-space: nowrap;
+          }
+          @left-middle {
+            content: 'lm';
+            white-space: nowrap;
+          }
+          @left-bottom {
+            content: 'lb';
+            white-space: nowrap;
+          }
+          @right-top {
+            content: 'rt';
+            white-space: nowrap;
+          }
+          @right-middle {
+            content: 'rm';
+            white-space: nowrap;
+          }
+          @right-bottom {
+            content: 'rb';
+            white-space: nowrap;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>First page</footer>
+    <article>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque at nostrum natus temporibus sunt, deserunt similique sit ipsa nisi vel illo consectetur cum laborum, quo
+        reiciendis blanditiis harum voluptatum magni.
+      </p>
+      <p>
+        Asperiores eius suscipit facere quidem quae dolor laudantium vitae nesciunt aspernatur consequatur quibusdam recusandae magni esse, praesentium sit hic dignissimos! Porro,
+        quasi distinctio. Natus beatae nostrum veniam, placeat ab fugiat.
+      </p>
+      <p>
+        Animi mollitia dolorum vero, omnis officiis quasi voluptates odit harum veritatis inventore ipsam ad in neque qui suscipit repellat ipsum labore ratione sunt repudiandae
+        libero, numquam sit voluptate! Quae, magni?
+      </p>
+      <p>
+        Debitis tempora dignissimos porro, velit et cumque magni temporibus. Nesciunt numquam laborum illum. Unde illo suscipit aperiam neque dolores ut ullam similique commodi
+        voluptate aliquam numquam, expedita ea, ratione omnis?
+      </p>
+      <p>
+        Quas nemo laudantium, dicta sequi esse distinctio magni. Quasi voluptatibus, ratione excepturi officiis facilis similique, debitis quae sint nisi vero qui maiores explicabo
+        suscipit! Odit corrupti consequuntur nihil saepe expedita!
+      </p>
+      <p>
+        Incidunt atque dolorem perspiciatis minima explicabo. Adipisci officia nostrum minima harum, voluptate, incidunt eum commodi odio, quod nulla modi? Ea iste cum consequatur
+        incidunt officiis, voluptatum delectus accusamus soluta beatae.
+      </p>
+      <p>
+        Enim corporis ducimus a quos eius tenetur porro id perferendis atque vel, itaque laborum. Perspiciatis nobis at tempora voluptatem maiores reprehenderit quas nihil sequi.
+        Aperiam quibusdam ipsam optio culpa officiis.
+      </p>
+      <p>
+        Quo possimus nulla perspiciatis itaque debitis quisquam repellat, voluptas repellendus! Quod exercitationem optio similique voluptatum doloribus iure expedita. Veritatis,
+        magnam asperiores vitae voluptatum odio corrupti reiciendis blanditiis voluptates nesciunt iusto.
+      </p>
+      <p>
+        Dolor ab doloremque consectetur corporis facere illum aut rerum omnis, ex dolores dolorem quibusdam voluptas eveniet beatae ratione voluptatum atque veritatis. Facilis,
+        numquam laudantium. Distinctio autem dolore beatae ex culpa.
+      </p>
+      <p>
+        Voluptates, eum placeat? Illum veritatis quisquam debitis possimus magni. Sunt esse odio odit perspiciatis voluptate non qui magnam et alias tenetur, aliquid, voluptas
+        ratione dolore laborum illo quaerat unde tempore?
+      </p>
+    </article>
+    <footer>Second page</footer>
+    <article>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque at nostrum natus temporibus sunt, deserunt similique sit ipsa nisi vel illo consectetur cum laborum, quo
+        reiciendis blanditiis harum voluptatum magni.
+      </p>
+      <p>
+        Asperiores eius suscipit facere quidem quae dolor laudantium vitae nesciunt aspernatur consequatur quibusdam recusandae magni esse, praesentium sit hic dignissimos! Porro,
+        quasi distinctio. Natus beatae nostrum veniam, placeat ab fugiat.
+      </p>
+      <p>
+        Animi mollitia dolorum vero, omnis officiis quasi voluptates odit harum veritatis inventore ipsam ad in neque qui suscipit repellat ipsum labore ratione sunt repudiandae
+        libero, numquam sit voluptate! Quae, magni?
+      </p>
+      <p>
+        Debitis tempora dignissimos porro, velit et cumque magni temporibus. Nesciunt numquam laborum illum. Unde illo suscipit aperiam neque dolores ut ullam similique commodi
+        voluptate aliquam numquam, expedita ea, ratione omnis?
+      </p>
+      <p>
+        Quas nemo laudantium, dicta sequi esse distinctio magni. Quasi voluptatibus, ratione excepturi officiis facilis similique, debitis quae sint nisi vero qui maiores explicabo
+        suscipit! Odit corrupti consequuntur nihil saepe expedita!
+      </p>
+      <p>
+        Incidunt atque dolorem perspiciatis minima explicabo. Adipisci officia nostrum minima harum, voluptate, incidunt eum commodi odio, quod nulla modi? Ea iste cum consequatur
+        incidunt officiis, voluptatum delectus accusamus soluta beatae.
+      </p>
+      <p>
+        Enim corporis ducimus a quos eius tenetur porro id perferendis atque vel, itaque laborum. Perspiciatis nobis at tempora voluptatem maiores reprehenderit quas nihil sequi.
+        Aperiam quibusdam ipsam optio culpa officiis.
+      </p>
+      <p>
+        Quo possimus nulla perspiciatis itaque debitis quisquam repellat, voluptas repellendus! Quod exercitationem optio similique voluptatum doloribus iure expedita. Veritatis,
+        magnam asperiores vitae voluptatum odio corrupti reiciendis blanditiis voluptates nesciunt iusto.
+      </p>
+      <p>
+        Dolor ab doloremque consectetur corporis facere illum aut rerum omnis, ex dolores dolorem quibusdam voluptas eveniet beatae ratione voluptatum atque veritatis. Facilis,
+        numquam laudantium. Distinctio autem dolore beatae ex culpa.
+      </p>
+      <p>
+        Voluptates, eum placeat? Illum veritatis quisquam debitis possimus magni. Sunt esse odio odit perspiciatis voluptate non qui magnam et alias tenetur, aliquid, voluptas
+        ratione dolore laborum illo quaerat unde tempore?
+      </p>
+    </article>
+  </body>
+</html>
