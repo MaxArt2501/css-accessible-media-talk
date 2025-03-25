@@ -91,6 +91,7 @@ p-deck:not([mode='speaker']) {
     background: url(../img/ball.svg);
     box-shadow: none;
     font-weight: bold;
+    border-image: none;
   }
 
   p-deck:not([mode='speaker']) & {
@@ -100,7 +101,7 @@ p-deck:not([mode='speaker']) {
       transition: scale var(--fragment-duration), opacity var(--fragment-duration);
     }
   }
-  p-deck:not([mode='speaker']) [aria-hidden="false"] & {
+  p-deck:not([mode='speaker']) [aria-hidden='false'] & {
     code {
       scale: 1;
       opacity: 1;

@@ -5,42 +5,6 @@
 @import 'typography/fuzzy-bubbles.scss';
 @import 'modules/specific.scss';
 
-@property --sketchy-arrow-width {
-  syntax: '<length>';
-  initial-value: 1px;
-  inherits: true;
-}
-@property --sketchy-arrow-tip-spread {
-  syntax: '<angle>';
-  initial-value: 45deg;
-  inherits: true;
-}
-@property --sketchy-arrow-tip-size {
-  syntax: '<number>';
-  initial-value: 40;
-  inherits: true;
-}
-@property --sketchy-arrow-point-approx {
-  syntax: '<number>';
-  initial-value: 3;
-  inherits: true;
-}
-@property --sketchy-arrow-count {
-  syntax: '<integer>';
-  initial-value: 3;
-  inherits: true;
-}
-@property --sketchy-arrow-color {
-  syntax: '<color>';
-  initial-value: black;
-  inherits: true;
-}
-@property --sketchy-arrow-random-seed {
-  syntax: '<integer>';
-  initial-value: 1234;
-  inherits: true;
-}
-
 :root {
   --slide-bg: #fff;
   --sliding-duration: 0ms;
@@ -66,6 +30,15 @@ p-deck::after {
   color: white;
   mix-blend-mode: difference;
   z-index: 100;
+}
+
+pre[class*='language-'] {
+  border-image-source: url(../img/code-bg.svg);
+  border-image-width: 0.5em;
+  background-clip: padding-box;
+  border-image-slice: 5%;
+  border-image-repeat: repeat;
+  border-image-outset: 0.5em;
 }
 
 code,
