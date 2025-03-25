@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @font-face {
   font-family: 'VT323';
   font-display: swap;
@@ -108,8 +110,7 @@ p-deck:not([mode='speaker']) {
     }
     @for $i from 1 through 7 {
       :nth-child(#{$i}) {
-        // animation: from-above var(--fragment-duration, 300ms) calc(var(--fragment-duration, 300ms) * #{$i / 7}) 1 forwards;
-        transition-delay: calc(var(--fragment-duration) * #{$i / 7});
+        transition-delay: calc(var(--fragment-duration) * #{math.div($i, 7)});
       }
     }
   }
@@ -228,6 +229,14 @@ p-deck:not([mode='speaker']) {
     [data-spot='#{$spot}'] {
       grid-area: #{$spot};
     }
+  }
+
+  &.small {
+    font-size: calc(100% / 3);
+    height: 29.7em;
+    margin: 0;
+    position: static;
+    display: block;
   }
 }
 
