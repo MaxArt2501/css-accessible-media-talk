@@ -105,6 +105,9 @@
     flex-wrap: wrap;
   }
 }
+p-slide.row {
+  flex-direction: row;
+}
 
 [grid] {
   display: grid;

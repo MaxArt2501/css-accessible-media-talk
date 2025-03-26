@@ -133,6 +133,7 @@ p-deck:not([mode='speaker']) {
   transition: transform var(--fragment-duration, 300ms);
   font-size: 50%;
 
+  p-deck[mode='speaker'] &,
   [aria-hidden='false'] & {
     transform: translate(0, 0);
   }
@@ -305,6 +306,7 @@ p-deck:not([mode='speaker']) {
     width: 32em;
     height: 25.75em;
     padding: 0.5em;
+    margin: auto;
     border: 3em solid antiquewhite;
     border-radius: 1em;
     background: repeating-linear-gradient(to bottom, #001100 0 0.08em, #001800 0.12em 0.2em);
